@@ -184,15 +184,15 @@ export default function ServicePage() {
       </section>
 
       {/* Pricing Section */}
-      <section className="mb-20">
+      {/* <section className="mb-20">
         <div className="text-center space-y-4 mb-12">
           <h2 className="text-3xl font-bold">가격 안내</h2>
           <p className="text-lg text-muted-foreground">
             목적에 맞는 플랜을 선택하세요
           </p>
         </div>
-        {/* 가격 안내 내용은 추후 업데이트 예정 */}
-      </section>
+        가격 안내 내용은 추후 업데이트 예정
+      </section> */}
 
       {/* FAQ Section */}
       <section className="mb-12">
