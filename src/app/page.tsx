@@ -1,3 +1,6 @@
+"use client";
+
+import { useState, useEffect } from "react";
 import Link from "next/link";
 import { Button } from "@/components/ui/button";
 import { Card, CardContent, CardDescription, CardHeader, CardTitle } from "@/components/ui/card";
@@ -5,6 +8,24 @@ import { ScrollAnimation } from "@/components/ui/scroll-animation";
 import { ArrowRight, CheckCircle2, Globe, Zap, Users, Star } from "lucide-react";
 
 export default function Home() {
+  // Background images array
+  const backgroundImages = [
+    "/hero-bg.jpg",
+    "/hero-bg2.jpg",
+  ];
+
+  const [currentImageIndex, setCurrentImageIndex] = useState(0);
+
+  // Auto-rotate images every 5 seconds
+  useEffect(() => {
+    const interval = setInterval(() => {
+      setCurrentImageIndex((prevIndex) => 
+        prevIndex === backgroundImages.length - 1 ? 0 : prevIndex + 1
+      );
+    }, 5000); // 5초마다 변경
+
+    return () => clearInterval(interval);
+  }, [backgroundImages.length]);
   const features = [
     {
       icon: <Globe className="h-8 w-8" />,
@@ -57,8 +78,27 @@ export default function Home() {
   return (
     <div className="flex flex-col bg-white">
       {/* Hero Section */}
-      <section className="w-full py-24 md:py-32 relative bg-white">
-        <div className="container mx-auto px-4">
+      <section className="w-full py-24 md:py-32 relative overflow-hidden">
+        {/* Background Images with Crossfade Effect */}
+        <div className="absolute inset-0">
+          {backgroundImages.map((image, index) => (
+            <div
+              key={index}
+              className={`absolute inset-0 bg-cover bg-center bg-no-repeat transition-opacity duration-1000 ease-in-out ${
+                index === currentImageIndex ? 'opacity-100' : 'opacity-0'
+              }`}
+              style={{
+                backgroundImage: `url(${image})`,
+                transitionDelay: index === currentImageIndex ? '0ms' : '0ms',
+              }}
+            />
+          ))}
+          {/* Overlay */}
+          <div className="absolute inset-0 bg-white/70 backdrop-blur-none"></div>
+        </div>
+        
+        {/* Content */}
+        <div className="container mx-auto px-4 relative z-10">
           <ScrollAnimation direction="fade">
           <div className="mx-auto max-w-4xl text-center space-y-8">
           <h1 className="text-5xl font-bold tracking-tight sm:text-7xl md:text-8xl leading-tight">
@@ -84,7 +124,7 @@ export default function Home() {
                 <ArrowRight className="ml-2 h-5 w-5" />
               </Link>
             </Button>
-            <Button asChild size="lg" variant="outline" className="text-lg px-8 border-slate-300 text-white hover:bg-slate-50 hover:border-slate-400 hover:text-black">
+            <Button asChild size="lg" variant="outline" className="text-lg px-8 border-2 border-slate-700 bg-white/90 text-slate-900 hover:bg-white hover:border-slate-900 backdrop-blur-sm">
               <Link href="/portfolio">포트폴리오 보기</Link>
             </Button>
           </div>
