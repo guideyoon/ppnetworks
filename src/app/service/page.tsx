@@ -108,7 +108,7 @@ export default function ServicePage() {
     },
     {
       question: "결제는 어떻게 하나요?",
-      answer: "카드, 계좌이체 가능하며, 세금계산서는 안되며, 현금영수증은 가능합니다.",
+      answer: "계좌이체로 가능하며, 현금영수증 가능합니다.(세금계산서 미발행)",
     },
   ];
 
