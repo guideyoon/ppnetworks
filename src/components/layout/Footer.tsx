@@ -18,7 +18,6 @@ export function Footer() {
 
           {/* Quick Links */}
           <div className="space-y-4">
-            <h4 className="text-sm font-semibold">빠른 링크</h4>
             <ul className="space-y-2 text-sm">
               <li>
                 <Link
@@ -49,7 +48,6 @@ export function Footer() {
 
           {/* Contact */}
           <div className="space-y-4">
-            <h4 className="text-sm font-semibold">연락처</h4>
             <ul className="space-y-2 text-sm text-muted-foreground">
               <li>
                 <a
@@ -66,7 +64,6 @@ export function Footer() {
 
           {/* Legal */}
           <div className="space-y-4">
-            <h4 className="text-sm font-semibold">법적 정보</h4>
             <ul className="space-y-2 text-sm">
               <li>
                 <Link
