@@ -1,8 +1,6 @@
 import { NextRequest, NextResponse } from "next/server";
 import { Resend } from "resend";
 
-const resend = new Resend(process.env.RESEND_API_KEY);
-
 export async function POST(request: NextRequest) {
   try {
     const body = await request.json();
@@ -95,6 +93,8 @@ export async function POST(request: NextRequest) {
 
     // 이메일 발송
     try {
+      // 함수 내부에서 Resend 인스턴스 생성 (빌드 시점 문제 방지)
+      const resend = new Resend(process.env.RESEND_API_KEY);
       const { data, error } = await resend.emails.send({
         from: "PEOPLENETWORKS <onboarding@resend.dev>", // Resend에서 도메인 인증 후 변경 가능
         to: [contactEmail],
