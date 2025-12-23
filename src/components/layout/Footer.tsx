@@ -61,13 +61,14 @@ export function Footer() {
               </li>
               <li>
                 <a
-                  href="mailto:"
+                  href="https://open.kakao.com/o/sHtN7Mzh"
+                  target="_blank"
+                  rel="noopener noreferrer"
                   className="hover:text-primary transition-colors"
                 >
-                  이메일: (문의 필요)
+                  카카오톡: 1:1 상담하기
                 </a>
               </li>
-              <li>카카오톡: (문의 필요)</li>
             </ul>
           </div>
 
