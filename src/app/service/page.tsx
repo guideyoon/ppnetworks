@@ -153,62 +153,6 @@ export default function ServicePage() {
         </div>
       </section>
 
-      {/* Pricing Section */}
-      <section className="mb-20">
-        <div className="text-center space-y-4 mb-12">
-          <h2 className="text-3xl font-bold">가격 안내</h2>
-          <p className="text-lg text-muted-foreground">
-            목적에 맞는 플랜을 선택하세요
-          </p>
-        </div>
-        <div className="grid grid-cols-1 md:grid-cols-3 gap-8 max-w-6xl mx-auto">
-          {pricingPlans.map((plan, index) => (
-            <Card
-              key={index}
-              className={index === 1 ? "border-2 border-primary shadow-lg" : ""}
-            >
-              <CardHeader className="text-center">
-                {index === 1 && (
-                  <div className="text-sm font-semibold text-primary mb-2">
-                    인기 플랜
-                  </div>
-                )}
-                <CardTitle className="text-2xl">{plan.name}</CardTitle>
-                <div className="mt-4">
-                  <span className="text-4xl font-bold">{plan.price}</span>
-                  {plan.price !== "견적 상담" && (
-                    <span className="text-muted-foreground">/원</span>
-                  )}
-                </div>
-                <CardDescription className="mt-2">
-                  {plan.description}
-                </CardDescription>
-              </CardHeader>
-              <CardContent className="space-y-6">
-                <ul className="space-y-3">
-                  {plan.features.map((feature, idx) => (
-                    <li key={idx} className="flex items-start gap-2">
-                      <CheckCircle2 className="h-5 w-5 text-primary mt-0.5 shrink-0" />
-                      <span className="text-sm">{feature}</span>
-                    </li>
-                  ))}
-                </ul>
-                <Button
-                  asChild
-                  className="w-full"
-                  variant={index === 1 ? "default" : "outline"}
-                >
-                  <Link href="/contact">
-                    상담 신청
-                    <ArrowRight className="ml-2 h-4 w-4" />
-                  </Link>
-                </Button>
-              </CardContent>
-            </Card>
-          ))}
-        </div>
-      </section>
-
       {/* Process Section */}
       <section className="mb-20">
         <div className="text-center space-y-4 mb-12">
@@ -237,6 +181,17 @@ export default function ServicePage() {
             ))}
           </div>
         </div>
+      </section>
+
+      {/* Pricing Section */}
+      <section className="mb-20">
+        <div className="text-center space-y-4 mb-12">
+          <h2 className="text-3xl font-bold">가격 안내</h2>
+          <p className="text-lg text-muted-foreground">
+            목적에 맞는 플랜을 선택하세요
+          </p>
+        </div>
+        {/* 가격 안내 내용은 추후 업데이트 예정 */}
       </section>
 
       {/* FAQ Section */}
