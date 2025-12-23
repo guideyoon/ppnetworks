@@ -1,6 +1,6 @@
 import { Card, CardContent, CardDescription, CardHeader, CardTitle } from "@/components/ui/card";
 import { Button } from "@/components/ui/button";
-import { Target, Heart, Users, Award } from "lucide-react";
+import { Target, Heart, Users, Award, MessageCircle } from "lucide-react";
 import Link from "next/link";
 
 export default function AboutPage() {
@@ -103,21 +103,14 @@ export default function AboutPage() {
               </p>
             </div>
             <div>
-              <h3 className="text-lg font-semibold mb-3">2. 디자인 단계</h3>
-              <p className="text-muted-foreground">
-                브랜드 아이덴티티와 타겟 고객을 고려한 디자인을 제안합니다.
-                고객의 피드백을 반영하여 최종 디자인을 확정합니다.
-              </p>
-            </div>
-            <div>
-              <h3 className="text-lg font-semibold mb-3">3. 개발 단계</h3>
+              <h3 className="text-lg font-semibold mb-3">2. 개발 단계</h3>
               <p className="text-muted-foreground">
                 확정된 디자인을 바탕으로 안정적이고 빠른 웹사이트를 개발합니다.
                 중간 점검을 통해 진행 상황을 공유합니다.
               </p>
             </div>
             <div>
-              <h3 className="text-lg font-semibold mb-3">4. 오픈 및 지원</h3>
+              <h3 className="text-lg font-semibold mb-3">3. 오픈 및 지원</h3>
               <p className="text-muted-foreground">
                 최종 검수를 거쳐 사이트를 오픈합니다. 오픈 후에도 기본 유지보수와
                 기술 지원을 제공합니다.
@@ -135,38 +128,28 @@ export default function AboutPage() {
             언제든지 편하게 연락주세요
           </p>
         </div>
-        <div className="grid grid-cols-1 md:grid-cols-3 gap-6 max-w-4xl mx-auto">
-          <Card>
+        <div className="flex justify-center">
+          <Card className="max-w-xs">
             <CardHeader className="text-center">
-              <CardTitle>전화</CardTitle>
+              <a
+                href="https://open.kakao.com/o/sHtN7Mzh"
+                target="_blank"
+                rel="noopener noreferrer"
+                className="flex flex-col items-center hover:opacity-80 transition-opacity"
+              >
+                <CardTitle className="mb-3">카카오톡</CardTitle>
+                <MessageCircle className="h-12 w-12 text-primary mb-2" />
+              </a>
             </CardHeader>
             <CardContent className="text-center">
-              <p className="text-muted-foreground">(문의 필요)</p>
-              <p className="text-sm text-muted-foreground mt-2">
-                평일 09:00 - 18:00
-              </p>
-            </CardContent>
-          </Card>
-          <Card>
-            <CardHeader className="text-center">
-              <CardTitle>이메일</CardTitle>
-            </CardHeader>
-            <CardContent className="text-center">
-              <p className="text-muted-foreground">(문의 필요)</p>
-              <p className="text-sm text-muted-foreground mt-2">
-                24시간 접수 가능
-              </p>
-            </CardContent>
-          </Card>
-          <Card>
-            <CardHeader className="text-center">
-              <CardTitle>카카오톡</CardTitle>
-            </CardHeader>
-            <CardContent className="text-center">
-              <p className="text-muted-foreground">(문의 필요)</p>
-              <p className="text-sm text-muted-foreground mt-2">
-                실시간 상담 가능
-              </p>
+              <a
+                href="https://open.kakao.com/o/sHtN7Mzh"
+                target="_blank"
+                rel="noopener noreferrer"
+                className="text-muted-foreground hover:text-primary transition-colors inline-block"
+              >
+                1:1 상담하기
+              </a>
             </CardContent>
           </Card>
         </div>
