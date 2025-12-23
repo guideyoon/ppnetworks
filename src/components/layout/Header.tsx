@@ -16,12 +16,12 @@ export function Header() {
   const [isMenuOpen, setIsMenuOpen] = useState(false);
 
   return (
-    <header className="sticky top-0 z-50 w-full border-b border-purple-900/20 bg-slate-950/95 backdrop-blur supports-[backdrop-filter]:bg-slate-950/60">
+    <header className="sticky top-0 z-50 w-full border-b border-slate-200 bg-white/95 backdrop-blur supports-[backdrop-filter]:bg-white/80">
       <div className="container mx-auto flex h-16 items-center justify-between px-4">
         <Link href="/" className="flex items-center space-x-2">
           <span className="text-2xl font-bold">
-            <span className="text-white">PEOPLE</span>
-            <span className="bg-gradient-to-r from-purple-400 to-purple-600 bg-clip-text text-transparent">NETWORKS</span>
+            <span className="text-slate-900">PEOPLE</span>
+            <span className="bg-gradient-to-r from-purple-600 to-purple-500 bg-clip-text text-transparent">NETWORKS</span>
           </span>
         </Link>
 
@@ -31,19 +31,19 @@ export function Header() {
             <Link
               key={item.href}
               href={item.href}
-              className="text-sm font-medium text-slate-300 transition-colors hover:text-purple-400"
+              className="text-sm font-semibold text-slate-900 transition-colors hover:text-purple-600"
             >
               {item.label}
             </Link>
           ))}
-          <Button asChild className="bg-gradient-to-r from-purple-500 to-purple-600 hover:from-purple-600 hover:to-purple-700 border-0">
+          <Button asChild className="bg-gradient-to-r from-purple-500 to-purple-600 hover:from-purple-600 hover:to-purple-700 border-0 text-white">
             <Link href="/contact">문의하기</Link>
           </Button>
         </nav>
 
         {/* Mobile Menu Button */}
         <button
-          className="md:hidden text-white"
+          className="md:hidden text-slate-900"
           onClick={() => setIsMenuOpen(!isMenuOpen)}
           aria-label="메뉴"
         >
@@ -57,19 +57,19 @@ export function Header() {
 
       {/* Mobile Navigation */}
       {isMenuOpen && (
-        <div className="md:hidden border-t border-purple-900/20 bg-slate-950/95">
+        <div className="md:hidden border-t border-slate-200 bg-white">
           <nav className="container mx-auto flex flex-col space-y-4 px-4 py-4">
             {navItems.map((item) => (
               <Link
                 key={item.href}
                 href={item.href}
-                className="text-sm font-medium text-slate-300 transition-colors hover:text-purple-400"
+                className="text-sm font-semibold text-slate-900 transition-colors hover:text-purple-600"
                 onClick={() => setIsMenuOpen(false)}
               >
                 {item.label}
               </Link>
             ))}
-            <Button asChild className="w-full mt-4 bg-gradient-to-r from-purple-500 to-purple-600 hover:from-purple-600 hover:to-purple-700 border-0">
+            <Button asChild className="w-full mt-4 bg-gradient-to-r from-purple-500 to-purple-600 hover:from-purple-600 hover:to-purple-700 border-0 text-white">
               <Link href="/contact">문의하기</Link>
             </Button>
           </nav>

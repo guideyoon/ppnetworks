@@ -14,13 +14,8 @@ export default function RootLayout({
   children: React.ReactNode;
 }>) {
   return (
-    <html lang="ko" className="dark">
-      <body className="min-h-screen flex flex-col bg-slate-950 text-white relative overflow-x-hidden">
-        {/* Background gradient effects */}
-        <div className="fixed inset-0 -z-10">
-          <div className="absolute top-0 right-0 w-[500px] h-[500px] bg-purple-500/20 rounded-full blur-[120px]"></div>
-          <div className="absolute bottom-0 left-0 w-[500px] h-[500px] bg-cyan-500/20 rounded-full blur-[120px]"></div>
-        </div>
+    <html lang="ko">
+      <body className="min-h-screen flex flex-col bg-white text-slate-900 relative overflow-x-hidden">
         <Header />
         <main className="flex-1">{children}</main>
         <Footer />

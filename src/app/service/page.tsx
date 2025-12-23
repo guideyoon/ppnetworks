@@ -7,6 +7,7 @@ import {
   AccordionItem,
   AccordionTrigger,
 } from "@/components/ui/accordion";
+import { ScrollAnimation } from "@/components/ui/scroll-animation";
 import { CheckCircle2, ArrowRight } from "lucide-react";
 
 export default function ServicePage() {
@@ -113,68 +114,83 @@ export default function ServicePage() {
   ];
 
   return (
-    <div className="container mx-auto px-4 py-12 md:py-16">
+    <div className="bg-white">
       {/* Hero Section */}
-      <div className="mx-auto max-w-3xl text-center space-y-6 mb-16">
+      <div className="w-full py-12 md:py-16">
+        <div className="container mx-auto px-4">
+          <ScrollAnimation direction="fade">
+          <div className="mx-auto max-w-3xl text-center space-y-6 mb-16">
         <h1 className="text-4xl font-bold tracking-tight sm:text-5xl md:text-6xl">
           서비스 안내
         </h1>
-        <p className="text-xl text-muted-foreground">
+        <p className="text-xl text-purple-600">
           소상공인을 위한 전문 홈페이지 제작 서비스
         </p>
+          </div>
+          </ScrollAnimation>
+        </div>
       </div>
 
       {/* Services Overview */}
-      <section className="mb-20">
-        <h2 className="text-3xl font-bold text-center mb-12">제공 서비스</h2>
-        <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-6">
-          {services.map((service, index) => (
-            <Card key={index}>
-              <CardHeader>
-                <CardTitle>{service.title}</CardTitle>
-                <CardDescription>{service.description}</CardDescription>
-              </CardHeader>
-              <CardContent>
-                <ul className="space-y-2">
-                  {service.details.map((detail, idx) => (
-                    <li key={idx} className="flex items-start gap-2 text-sm">
-                      <CheckCircle2 className="h-4 w-4 text-primary mt-0.5 shrink-0" />
-                      <span>{detail}</span>
-                    </li>
-                  ))}
-                </ul>
-              </CardContent>
-            </Card>
+      <section className="w-full mb-20 bg-slate-50 py-16">
+        <div className="container mx-auto px-4">
+          <ScrollAnimation direction="fade">
+            <h2 className="text-3xl font-bold text-center mb-12 text-slate-900">제공 서비스</h2>
+          </ScrollAnimation>
+          <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-6 max-w-7xl mx-auto">
+            {services.map((service, index) => (
+              <ScrollAnimation key={index} direction="up" delay={index * 100}>
+                <Card className="h-full bg-white border-2 border-slate-300 shadow-sm hover:shadow-md transition-shadow">
+                <CardHeader className="pb-4">
+                  <CardTitle className="text-slate-900 text-lg">{service.title}</CardTitle>
+                  <CardDescription className="text-slate-700">{service.description}</CardDescription>
+                </CardHeader>
+                <CardContent>
+                  <ul className="space-y-2">
+                    {service.details.map((detail, idx) => (
+                      <li key={idx} className="flex items-start gap-2 text-sm text-slate-700">
+                        <CheckCircle2 className="h-4 w-4 text-purple-600 mt-0.5 shrink-0" />
+                        <span>{detail}</span>
+                      </li>
+                    ))}
+                  </ul>
+                </CardContent>
+              </Card>
+            </ScrollAnimation>
           ))}
+          </div>
         </div>
       </section>
 
       {/* Process Section */}
-      <section className="mb-20">
-        <div className="text-center space-y-4 mb-12">
-          <h2 className="text-3xl font-bold">제작 프로세스</h2>
-          <p className="text-lg text-muted-foreground">
-            단계별 명확한 진행 과정
-          </p>
-        </div>
-        <div className="max-w-4xl mx-auto">
-          <div className="grid grid-cols-1 md:grid-cols-4 gap-6">
-            {[
-              "1. 상담 및 요구사항 확인",
-              "2. 디자인 제안 및 확정",
-              "3. 제작 및 리뷰",
-              "4. 최종 검수 및 오픈",
-            ].map((step, index) => (
-              <div
-                key={index}
-                className="text-center p-6 rounded-lg border space-y-4"
-              >
-                <div className="flex h-12 w-12 items-center justify-center rounded-full bg-primary text-primary-foreground text-lg font-bold mx-auto">
-                  {index + 1}
-                </div>
-                <p className="font-medium">{step}</p>
-              </div>
-            ))}
+      <section className="w-full mb-20 bg-white py-16">
+        <div className="container mx-auto px-4">
+          <ScrollAnimation direction="fade">
+            <div className="text-center space-y-4 mb-12">
+              <h2 className="text-3xl font-bold text-slate-900">제작 프로세스</h2>
+              <p className="text-lg text-slate-600">
+                단계별 명확한 진행 과정
+              </p>
+            </div>
+          </ScrollAnimation>
+          <div className="max-w-4xl mx-auto">
+            <div className="grid grid-cols-1 md:grid-cols-4 gap-6">
+              {[
+                "1. 상담 및 요구사항 확인",
+                "2. 디자인 제안 및 확정",
+                "3. 제작 및 리뷰",
+                "4. 최종 검수 및 오픈",
+              ].map((step, index) => (
+                <ScrollAnimation key={index} direction="up" delay={index * 100}>
+                  <div className="flex flex-col items-center justify-center text-center h-full min-h-[180px] p-6 rounded-lg border-2 border-slate-300 bg-white shadow-sm hover:shadow-md transition-shadow">
+                    <div className="flex h-12 w-12 items-center justify-center rounded-full bg-gradient-to-r from-purple-500 to-purple-600 text-white text-lg font-bold mx-auto shadow-sm mb-4">
+                      {index + 1}
+                    </div>
+                    <p className="font-medium text-slate-900 text-sm leading-relaxed">{step}</p>
+                  </div>
+                </ScrollAnimation>
+              ))}
+            </div>
           </div>
         </div>
       </section>
@@ -191,31 +207,39 @@ export default function ServicePage() {
       </section> */}
 
       {/* FAQ Section */}
-      <section className="mb-12">
-        <div className="text-center space-y-4 mb-12">
-          <h2 className="text-3xl font-bold">자주 묻는 질문</h2>
-        </div>
-        <div className="max-w-3xl mx-auto">
-          <Accordion type="single" collapsible className="w-full">
-            {faqs.map((faq, index) => (
-              <AccordionItem key={index} value={`item-${index}`}>
-                <AccordionTrigger className="text-left">
-                  {faq.question}
-                </AccordionTrigger>
-                <AccordionContent className="text-muted-foreground">
-                  {faq.answer}
-                </AccordionContent>
-              </AccordionItem>
-            ))}
-          </Accordion>
+      <section className="w-full mb-12 bg-slate-50 py-16">
+        <div className="container mx-auto px-4">
+          <ScrollAnimation direction="fade">
+            <div className="text-center space-y-4 mb-12">
+              <h2 className="text-3xl font-bold text-slate-900">자주 묻는 질문</h2>
+            </div>
+          </ScrollAnimation>
+          <ScrollAnimation direction="up">
+            <div className="max-w-3xl mx-auto">
+              <Accordion type="single" collapsible className="w-full">
+                {faqs.map((faq, index) => (
+                  <AccordionItem key={index} value={`item-${index}`}>
+                    <AccordionTrigger className="text-left text-slate-900 font-semibold">
+                      {faq.question}
+                    </AccordionTrigger>
+                    <AccordionContent className="text-slate-700">
+                      {faq.answer}
+                    </AccordionContent>
+                  </AccordionItem>
+                ))}
+              </Accordion>
+            </div>
+          </ScrollAnimation>
         </div>
       </section>
 
       {/* CTA Section */}
-      <section className="text-center">
-        <Card className="max-w-2xl mx-auto border-2">
+      <section className="w-full text-center bg-white py-16">
+        <div className="container mx-auto px-4">
+          <ScrollAnimation direction="up">
+            <Card className="max-w-2xl mx-auto border-2 border-slate-300 bg-white shadow-md">
           <CardHeader className="space-y-4">
-            <CardTitle className="text-2xl">더 궁금한 점이 있으신가요?</CardTitle>
+            <CardTitle className="text-2xl text-purple-600">더 궁금한 점이 있으신가요?</CardTitle>
             <CardDescription className="text-lg">
               무료 상담을 통해 맞춤형 제안을 받아보세요
             </CardDescription>
@@ -229,6 +253,8 @@ export default function ServicePage() {
             </Button>
           </CardContent>
         </Card>
+        </ScrollAnimation>
+        </div>
       </section>
     </div>
   );

@@ -3,6 +3,7 @@
 import { useState } from "react";
 import { Card, CardContent, CardDescription, CardHeader, CardTitle } from "@/components/ui/card";
 import { Button } from "@/components/ui/button";
+import { ScrollAnimation } from "@/components/ui/scroll-animation";
 import { Globe, ExternalLink } from "lucide-react";
 import Link from "next/link";
 
@@ -82,52 +83,67 @@ export default function PortfolioPage() {
       : portfolioItems.filter((item) => item.category === selectedCategory);
 
   return (
-    <div className="container mx-auto px-4 py-12 md:py-16">
+    <div className="bg-white">
       {/* Hero Section */}
-      <div className="mx-auto max-w-3xl text-center space-y-6 mb-12">
+      <div className="w-full py-12 md:py-16">
+        <div className="container mx-auto px-4">
+          <ScrollAnimation direction="fade">
+          <div className="mx-auto max-w-3xl text-center space-y-6 mb-4">
         <h1 className="text-4xl font-bold tracking-tight sm:text-5xl md:text-6xl">
           포트폴리오
         </h1>
-        <p className="text-xl text-muted-foreground">
+        <p className="text-xl text-purple-600">
           다양한 업종의 실제 제작 사례를 확인하세요
         </p>
-      </div>
-
-      {/* Filter Section */}
-      <div className="flex flex-wrap justify-center gap-2 mb-12">
-        {categories.map((category) => (
-          <Button
-            key={category}
-            variant={selectedCategory === category ? "default" : "outline"}
-            onClick={() => setSelectedCategory(category)}
-            className="mb-2"
-          >
-            {category}
-          </Button>
-        ))}
+          </div>
+          </ScrollAnimation>
+          
+          {/* Filter Section */}
+          <ScrollAnimation direction="fade" delay={100}>
+          <div className="flex flex-wrap justify-center gap-2 mt-4">
+            {categories.map((category) => (
+              <Button
+                key={category}
+                variant={selectedCategory === category ? "default" : "outline"}
+                onClick={() => setSelectedCategory(category)}
+                className={`mb-2 ${
+                  selectedCategory === category
+                    ? "bg-gradient-to-r from-purple-500 to-purple-600 hover:from-purple-600 hover:to-purple-700 text-white border-0"
+                    : "border-2 border-slate-400 text-slate-700 hover:bg-slate-100 hover:border-slate-500 hover:text-slate-900 bg-white"
+                }`}
+              >
+                {category}
+              </Button>
+            ))}
+          </div>
+          </ScrollAnimation>
+        </div>
       </div>
 
       {/* Portfolio Grid */}
-      <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6 mb-12">
-        {filteredItems.map((item) => (
-          <Card key={item.id} className="overflow-hidden hover:shadow-lg transition-shadow group">
-            <div className="aspect-video bg-muted flex items-center justify-center relative overflow-hidden">
-              <Globe className="h-16 w-16 text-muted-foreground/50 group-hover:scale-110 transition-transform" />
-              <div className="absolute inset-0 bg-black/0 group-hover:bg-black/10 transition-colors" />
-            </div>
-            <CardHeader>
-              <div className="flex items-start justify-between gap-2">
-                <div className="flex-1">
-                  <div className="text-sm text-muted-foreground mb-1">
-                    {item.category}
+      <div className="w-full bg-slate-50 py-16 mb-12">
+        <div className="container mx-auto px-4">
+          <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6 max-w-7xl mx-auto">
+          {filteredItems.map((item, index) => (
+            <ScrollAnimation key={item.id} direction="up" delay={index * 100}>
+              <Card className="h-full flex flex-col overflow-hidden hover:shadow-lg transition-shadow group bg-white border-2 border-slate-300 shadow-sm">
+              <div className="aspect-video bg-slate-100 flex items-center justify-center relative overflow-hidden">
+                <Globe className="h-16 w-16 text-slate-500 group-hover:scale-110 transition-transform" />
+                <div className="absolute inset-0 bg-black/0 group-hover:bg-black/5 transition-colors" />
+              </div>
+              <CardHeader className="flex-1 flex flex-col pb-4">
+                <div className="flex items-start justify-between gap-2">
+                  <div className="flex-1">
+                    <div className="text-sm text-purple-600 font-semibold mb-1">
+                      {item.category}
+                    </div>
+                    <CardTitle className="text-xl text-slate-900">{item.title}</CardTitle>
                   </div>
-                  <CardTitle className="text-xl">{item.title}</CardTitle>
-                </div>
                 <Button
                   asChild
                   variant="ghost"
                   size="icon"
-                  className="shrink-0"
+                  className="shrink-0 text-slate-600 hover:text-slate-900"
                 >
                   <a
                     href={item.site_url}
@@ -138,41 +154,51 @@ export default function PortfolioPage() {
                     <ExternalLink className="h-4 w-4" />
                   </a>
                 </Button>
-              </div>
-              <CardDescription>{item.description}</CardDescription>
-            </CardHeader>
-            <CardContent>
-              <div className="flex flex-wrap gap-2">
-                {item.tags.map((tag, index) => (
-                  <span
-                    key={index}
-                    className="text-xs px-2 py-1 bg-muted rounded-md text-muted-foreground"
-                  >
-                    {tag}
-                  </span>
-                ))}
-              </div>
-            </CardContent>
-          </Card>
-        ))}
+                </div>
+                <CardDescription className="text-slate-700">{item.description}</CardDescription>
+              </CardHeader>
+              <CardContent>
+                <div className="flex flex-wrap gap-2">
+                  {item.tags.map((tag, index) => (
+                    <span
+                      key={index}
+                      className="text-xs px-2 py-1 bg-purple-50 border border-purple-200 rounded-md text-purple-700 font-medium"
+                    >
+                      {tag}
+                    </span>
+                  ))}
+                </div>
+              </CardContent>
+            </Card>
+            </ScrollAnimation>
+          ))}
+          </div>
+        </div>
       </div>
 
       {filteredItems.length === 0 && (
-        <div className="text-center py-12">
-          <p className="text-muted-foreground">
-            해당 카테고리의 포트폴리오가 없습니다.
-          </p>
-        </div>
+        <ScrollAnimation direction="fade">
+          <div className="w-full text-center py-16 bg-slate-50">
+            <div className="container mx-auto px-4">
+              <p className="text-slate-700 text-lg">
+                해당 카테고리의 포트폴리오가 없습니다.
+              </p>
+            </div>
+          </div>
+        </ScrollAnimation>
       )}
 
       {/* CTA Section */}
-      <div className="max-w-2xl mx-auto text-center mt-16">
-        <Card className="border-2">
+      <div className="w-full bg-white py-16">
+        <div className="container mx-auto px-4">
+          <div className="max-w-2xl mx-auto text-center">
+        <ScrollAnimation direction="up">
+          <Card className="border border-slate-200 bg-white shadow-md">
           <CardHeader className="space-y-4">
-            <CardTitle className="text-2xl">
+            <CardTitle className="text-2xl text-slate-900">
               이런 홈페이지가 필요하신가요?
             </CardTitle>
-            <CardDescription className="text-lg">
+            <CardDescription className="text-lg text-slate-600">
               무료 상담을 통해 맞춤형 제작을 시작하세요
             </CardDescription>
           </CardHeader>
@@ -181,7 +207,10 @@ export default function PortfolioPage() {
               <Link href="/contact">무료 상담 신청하기</Link>
             </Button>
           </CardContent>
-        </Card>
+          </Card>
+        </ScrollAnimation>
+          </div>
+        </div>
       </div>
     </div>
   );

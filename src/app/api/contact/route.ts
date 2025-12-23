@@ -16,6 +16,7 @@ export async function POST(request: NextRequest) {
       referenceUrl1,
       referenceUrl2,
       otherRequests,
+      privacyAgreement,
     } = body;
 
     // 필수 입력 검증
