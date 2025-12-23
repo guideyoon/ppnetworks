@@ -53,14 +53,6 @@ export function Footer() {
             <ul className="space-y-2 text-sm text-muted-foreground">
               <li>
                 <a
-                  href="tel:"
-                  className="hover:text-primary transition-colors"
-                >
-                  전화: (문의 필요)
-                </a>
-              </li>
-              <li>
-                <a
                   href="https://open.kakao.com/o/sHtN7Mzh"
                   target="_blank"
                   rel="noopener noreferrer"
