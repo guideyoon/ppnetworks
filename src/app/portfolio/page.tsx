@@ -14,7 +14,7 @@ const portfolioItems = [
     description: "따뜻하고 모던한 분위기의 카페 홈페이지",
     thumbnail: "/placeholder-cafe.jpg",
     site_url: "https://example.com",
-    tags: ["반응형", "예약시스템", "메뉴표"],
+    tags: ["반응형", "메뉴표"],
   },
   {
     id: 2,
@@ -23,7 +23,7 @@ const portfolioItems = [
     description: "세련되고 전문적인 미용실 홈페이지",
     thumbnail: "/placeholder-salon.jpg",
     site_url: "https://example.com",
-    tags: ["반응형", "예약시스템", "포트폴리오"],
+    tags: ["반응형"],
   },
   {
     id: 3,
@@ -32,7 +32,7 @@ const portfolioItems = [
     description: "프리미엄 레스토랑 홈페이지",
     thumbnail: "/placeholder-restaurant.jpg",
     site_url: "https://example.com",
-    tags: ["반응형", "메뉴표", "예약시스템"],
+    tags: ["반응형", "메뉴표"],
   },
   {
     id: 4,
@@ -41,7 +41,7 @@ const portfolioItems = [
     description: "자연스럽고 편안한 요가 스튜디오 홈페이지",
     thumbnail: "/placeholder-yoga.jpg",
     site_url: "https://example.com",
-    tags: ["반응형", "예약시스템"],
+    tags: ["반응형"],
   },
   {
     id: 5,
@@ -50,7 +50,7 @@ const portfolioItems = [
     description: "트렌디한 의류 매장 홈페이지",
     thumbnail: "/placeholder-fashion.jpg",
     site_url: "https://example.com",
-    tags: ["반응형", "쇼핑몰 연동"],
+    tags: ["반응형"],
   },
   {
     id: 6,
@@ -59,7 +59,7 @@ const portfolioItems = [
     description: "사랑스러운 애견 미용실 홈페이지",
     thumbnail: "/placeholder-pet.jpg",
     site_url: "https://example.com",
-    tags: ["반응형", "예약시스템"],
+    tags: ["반응형"],
   },
 ];
 
