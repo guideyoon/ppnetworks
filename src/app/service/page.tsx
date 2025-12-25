@@ -14,8 +14,7 @@ export default function ServicePage() {
   const pricingPlans = [
     {
       name: "베이직",
-      price: "₩990,000",
-      description: "소상공인을 위한 기본 홈페이지",
+      description: "원페이지 기준",
       features: [
         "반응형 디자인 (모바일/태블릿/PC)",
         "최대 5개 페이지",
@@ -27,8 +26,7 @@ export default function ServicePage() {
     },
     {
       name: "프리미엄",
-      price: "₩1,990,000",
-      description: "확장 기능이 포함된 고급 홈페이지",
+      description: "일반 홈페이지",
       features: [
         "반응형 디자인 (모바일/태블릿/PC)",
         "최대 10개 페이지",
@@ -42,15 +40,11 @@ export default function ServicePage() {
     },
     {
       name: "커스텀",
-      price: "견적 상담",
       description: "특별한 요구사항을 위한 맞춤 제작",
       features: [
         "모든 기본 기능 포함",
         "페이지 수 제한 없음",
         "커스텀 기능 개발",
-        "전자상거래 연동 가능",
-        "API 연동 가능",
-        "전담 디자이너 배정",
       ],
     },
   ];
@@ -167,7 +161,7 @@ export default function ServicePage() {
         <div className="container mx-auto px-4">
           <ScrollAnimation direction="fade">
             <div className="text-center space-y-4 mb-12">
-              <h2 className="text-3xl font-bold text-slate-900">가격 안내</h2>
+              <h2 className="text-3xl font-bold text-slate-900">플랜 안내</h2>
               <p className="text-lg text-slate-600">
                 목적에 맞는 플랜을 선택하세요
               </p>
@@ -183,7 +177,6 @@ export default function ServicePage() {
                 } bg-white hover:shadow-xl transition-all`}>
                   <CardHeader className="text-center pb-4">
                     <CardTitle className="text-2xl text-slate-900 mb-2">{plan.name}</CardTitle>
-                    <div className="text-3xl font-bold text-purple-600 mb-2">{plan.price}</div>
                     <CardDescription className="text-base text-slate-600">{plan.description}</CardDescription>
                   </CardHeader>
                   <CardContent className="flex-grow">
