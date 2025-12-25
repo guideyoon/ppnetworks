@@ -245,7 +245,7 @@ export default function Home() {
                               </div>
                               
                               {/* Icon Overlay */}
-                              <div className="absolute inset-0 flex items-center justify-center opacity-0 group-hover:opacity-100 transition-opacity duration-700">
+                              <div className="absolute inset-0 flex items-center justify-center opacity-0 group-hover:opacity-100 transition-none">
                                 <div className="flex h-16 w-16 items-center justify-center rounded-full bg-white/20 backdrop-blur-sm">
                                   <IconComponent className="h-8 w-8 text-white" strokeWidth={2.5} />
                                 </div>
