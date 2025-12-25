@@ -61,35 +61,36 @@ export default function AboutPage() {
         <section className="w-full mb-20 py-16 relative" style={{ zIndex: 1 }}>
           <div className="container mx-auto px-4">
             <div className="max-w-4xl mx-auto">
-            <ScrollAnimation direction="fade">
-              <div className="prose prose-lg mx-auto">
-                <h2 className="text-3xl font-bold mb-6 text-center text-slate-900">브랜드 스토리</h2>
-                <div className="space-y-4 text-slate-700">
-            <p>
-              피플네트웍스는 소상공인들이 온라인에서 성공할 수 있도록 돕는 것을
-              목표로 설립되었습니다. 많은 소상공인들이 전문적인 홈페이지 제작의
-              높은 진입 장벽 때문에 어려움을 겪고 있다는 것을 알게 되었습니다.
-            </p>
-            <p>
-              우리는 복잡하고 비싼 솔루션이 아닌, 소상공인에게 실제로 필요한
-              기능만 담은 실용적이고 합리적인 홈페이지를 제공합니다. 각 업종의
-              특성과 비즈니스 모델을 이해하고, 고객의 목표를 달성할 수 있도록
-              최선을 다합니다.
-            </p>
-            <p>
-              피플네트웍스와 함께 여러분의 비즈니스를 온라인에서도 빛나게
-              만들어보세요.
-            </p>
+              <ScrollAnimation direction="fade">
+                <div className="prose prose-lg mx-auto">
+                  <h2 className="text-3xl font-bold mb-6 text-center text-slate-900">브랜드 스토리</h2>
+                  <div className="space-y-4 text-slate-700">
+                    <p>
+                      피플네트웍스는 소상공인들이 온라인에서 성공할 수 있도록 돕는 것을
+                      목표로 설립되었습니다. 많은 소상공인들이 전문적인 홈페이지 제작의
+                      높은 진입 장벽 때문에 어려움을 겪고 있다는 것을 알게 되었습니다.
+                    </p>
+                    <p>
+                      우리는 복잡하고 비싼 솔루션이 아닌, 소상공인에게 실제로 필요한
+                      기능만 담은 실용적이고 합리적인 홈페이지를 제공합니다. 각 업종의
+                      특성과 비즈니스 모델을 이해하고, 고객의 목표를 달성할 수 있도록
+                      최선을 다합니다.
+                    </p>
+                    <p>
+                      피플네트웍스와 함께 여러분의 비즈니스를 온라인에서도 빛나게
+                      만들어보세요.
+                    </p>
+                  </div>
+                </div>
+              </ScrollAnimation>
             </div>
-              </div>
-            </ScrollAnimation>
           </div>
-          </section>
+        </section>
 
-          {/* Values Section */}
-          <section className="w-full mb-20 py-20">
-            <div className="container mx-auto px-4">
-          <ScrollAnimation direction="fade">
+        {/* Values Section */}
+        <section className="w-full mb-20 py-20 relative" style={{ zIndex: 1 }}>
+          <div className="container mx-auto px-4">
+            <ScrollAnimation direction="fade">
             <div className="text-center space-y-4 mb-16">
               <div className="inline-block px-4 py-2 bg-purple-100 rounded-full mb-4">
                 <span className="text-sm font-semibold text-purple-700">우리의 가치</span>
