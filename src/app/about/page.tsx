@@ -46,12 +46,16 @@ export default function AboutPage() {
         </div>
       </div>
 
-      {/* Story Section */}
-      <section className="w-full mb-20 relative py-16 overflow-hidden">
-        {/* Background Image */}
-        <div className="absolute inset-0 bg-cover bg-center bg-no-repeat" style={{ backgroundImage: 'url(/s3.jpg)' }}></div>
+      {/* Combined Sections with Fixed Background */}
+      <div className="relative" style={{ minHeight: '100vh' }}>
+        {/* Fixed Background Image */}
+        <div className="fixed inset-0 bg-cover bg-center bg-no-repeat pointer-events-none" style={{ backgroundImage: 'url(/s3.jpg)', zIndex: 0 }}></div>
         
-        <div className="container mx-auto px-4 relative z-10">
+        {/* Content Wrapper with z-index */}
+        <div style={{ position: 'relative', zIndex: 1 }}>
+          {/* Story Section */}
+          <section className="w-full mb-20 py-16">
+            <div className="container mx-auto px-4">
           <div className="max-w-4xl mx-auto">
             <ScrollAnimation direction="fade">
               <div className="prose prose-lg mx-auto">
@@ -76,15 +80,11 @@ export default function AboutPage() {
               </div>
             </ScrollAnimation>
           </div>
-        </div>
-      </section>
+          </section>
 
-      {/* Values Section */}
-      <section className="w-full mb-20 py-20 relative overflow-hidden">
-        {/* Background Image */}
-        <div className="absolute inset-0 bg-cover bg-center bg-no-repeat" style={{ backgroundImage: 'url(/s3.jpg)' }}></div>
-        
-        <div className="container mx-auto px-4 relative z-10">
+          {/* Values Section */}
+          <section className="w-full mb-20 py-20">
+            <div className="container mx-auto px-4">
           <ScrollAnimation direction="fade">
             <div className="text-center space-y-4 mb-16">
               <div className="inline-block px-4 py-2 bg-purple-100 rounded-full mb-4">
@@ -137,8 +137,9 @@ export default function AboutPage() {
               </ScrollAnimation>
             ))}
           </div>
+          </section>
         </div>
-      </section>
+      </div>
 
       {/* Approach Section */}
       <section className="w-full mb-20 bg-white py-20 relative overflow-hidden">
