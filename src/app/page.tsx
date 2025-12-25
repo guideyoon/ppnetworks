@@ -220,45 +220,55 @@ export default function Home() {
             </ScrollAnimation>
             
             <div className="relative">
-              <div className="grid grid-cols-1 md:grid-cols-4 gap-6 md:gap-4 lg:gap-6 relative">
+              <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-6 lg:gap-8 relative">
                 {processSteps.map((step, index) => {
                   const IconComponent = step.icon;
                   return (
                     <div key={step.number} className="relative">
                       <ScrollAnimation direction="up" delay={index * 100}>
-                        <div className="group relative flex flex-col h-full min-h-[280px] p-8 rounded-2xl border border-slate-200/80 bg-white/80 backdrop-blur-sm shadow-lg hover:shadow-2xl hover:shadow-purple-500/20 hover:-translate-y-3 hover:border-purple-300 transition-all duration-500 cursor-pointer overflow-hidden">
-                          {/* Gradient Overlay on Hover */}
-                          <div className="absolute inset-0 bg-gradient-to-br from-purple-50/0 via-purple-50/0 to-purple-50/0 group-hover:from-purple-50/50 group-hover:via-purple-50/30 group-hover:to-white transition-all duration-500"></div>
+                        <div className="group relative flex flex-col h-full min-h-[320px] p-10 rounded-3xl bg-white border border-slate-100 shadow-md hover:shadow-2xl hover:shadow-purple-500/10 hover:-translate-y-4 transition-all duration-700 cursor-pointer overflow-hidden">
+                          {/* Animated Background Gradient */}
+                          <div className="absolute inset-0 bg-gradient-to-br from-purple-50/0 via-purple-50/0 to-purple-100/0 group-hover:from-purple-50/40 group-hover:via-purple-50/20 group-hover:to-white transition-all duration-700"></div>
+                          
+                          {/* Decorative Corner Accent */}
+                          <div className="absolute top-0 right-0 w-32 h-32 bg-gradient-to-br from-purple-100/0 to-purple-100/0 group-hover:from-purple-100/30 group-hover:to-transparent rounded-bl-full transition-all duration-700"></div>
                           
                           <div className="relative z-10 flex flex-col items-center text-center h-full">
-                            {/* Icon Badge with Enhanced Animation */}
-                            <div className="relative mb-6">
-                              {/* Outer Glow Ring */}
-                              <div className="absolute inset-0 rounded-2xl bg-gradient-to-r from-purple-500 to-purple-600 opacity-0 group-hover:opacity-20 blur-xl group-hover:blur-2xl transition-all duration-500 scale-75 group-hover:scale-110"></div>
+                            {/* Number Badge - Modern Design */}
+                            <div className="relative mb-8">
+                              {/* Outer Glow Effect */}
+                              <div className="absolute inset-0 rounded-full bg-gradient-to-r from-purple-400 to-purple-600 opacity-0 group-hover:opacity-30 blur-2xl group-hover:blur-3xl transition-all duration-700 scale-50 group-hover:scale-150"></div>
                               
-                              {/* Icon Container */}
-                              <div className="relative flex h-20 w-20 items-center justify-center rounded-2xl bg-gradient-to-br from-purple-500 via-purple-600 to-purple-700 text-white shadow-xl shadow-purple-500/30 group-hover:scale-110 group-hover:shadow-purple-500/50 group-hover:rotate-3 transition-all duration-500">
-                                <IconComponent className="h-10 w-10" strokeWidth={2} />
+                              {/* Main Number Circle */}
+                              <div className="relative flex h-24 w-24 items-center justify-center rounded-full bg-gradient-to-br from-purple-500 via-purple-600 to-purple-700 text-white shadow-2xl shadow-purple-500/40 group-hover:scale-110 group-hover:shadow-purple-500/60 group-hover:rotate-6 transition-all duration-700">
+                                <span className="text-3xl font-bold">{step.number}</span>
                               </div>
                               
-                              {/* Number Badge */}
-                              <div className="absolute -top-2 -right-2 flex h-8 w-8 items-center justify-center rounded-full bg-purple-600 text-white text-sm font-bold shadow-lg ring-4 ring-white group-hover:scale-125 group-hover:bg-purple-700 transition-all duration-500">
-                                {step.number}
+                              {/* Icon Overlay */}
+                              <div className="absolute inset-0 flex items-center justify-center opacity-0 group-hover:opacity-100 transition-opacity duration-700">
+                                <div className="flex h-16 w-16 items-center justify-center rounded-full bg-white/20 backdrop-blur-sm">
+                                  <IconComponent className="h-8 w-8 text-white" strokeWidth={2.5} />
+                                </div>
                               </div>
                             </div>
                             
                             {/* Step Title */}
-                            <h3 className="font-bold text-slate-900 text-lg mb-3 group-hover:text-purple-700 transition-colors duration-300">
-                              {step.number}. {step.title}
+                            <h3 className="font-bold text-slate-900 text-xl mb-4 group-hover:text-purple-700 transition-colors duration-500 leading-tight">
+                              {step.title}
                             </h3>
                             
                             {/* Step Description */}
-                            <p className="text-sm text-slate-600 leading-relaxed group-hover:text-slate-700 transition-colors duration-300 flex-grow">
+                            <p className="text-sm text-slate-600 leading-relaxed group-hover:text-slate-800 transition-colors duration-500 flex-grow max-w-[240px]">
                               {step.description}
                             </p>
                             
-                            {/* Bottom Indicator Bar */}
-                            <div className="absolute bottom-0 left-0 right-0 h-1 bg-gradient-to-r from-transparent via-purple-500 to-transparent transform scale-x-0 group-hover:scale-x-100 transition-transform duration-500 origin-center"></div>
+                            {/* Bottom Accent Line */}
+                            <div className="absolute bottom-0 left-0 right-0 h-1.5 bg-gradient-to-r from-transparent via-purple-500 to-transparent transform scale-x-0 group-hover:scale-x-100 transition-transform duration-700 origin-center rounded-full"></div>
+                            
+                            {/* Progress Indicator */}
+                            <div className="mt-6 w-full max-w-[200px] h-1 bg-slate-100 rounded-full overflow-hidden">
+                              <div className="h-full bg-gradient-to-r from-purple-500 to-purple-600 transform scale-x-0 group-hover:scale-x-100 transition-transform duration-700 origin-left rounded-full"></div>
+                            </div>
                           </div>
                         </div>
                       </ScrollAnimation>
