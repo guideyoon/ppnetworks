@@ -167,38 +167,98 @@ export default function ContactPage() {
       </div>
 
       {/* Process Section */}
-      <section className="w-full mb-12 bg-slate-50 py-16">
-        <div className="container mx-auto px-4">
+      <section className="w-full mb-12 bg-gradient-to-b from-slate-50 to-white py-20 relative overflow-hidden">
+        {/* Decorative Background Elements */}
+        <div className="absolute inset-0 opacity-5">
+          <div className="absolute top-10 left-10 w-64 h-64 bg-purple-500 rounded-full blur-3xl"></div>
+          <div className="absolute bottom-10 right-10 w-80 h-80 bg-purple-600 rounded-full blur-3xl"></div>
+        </div>
+        
+        <div className="container mx-auto px-4 relative z-10">
           <ScrollAnimation direction="fade">
-            <h2 className="text-3xl font-bold text-center mb-12 text-slate-900">홈페이지 무료상담 프로세스</h2>
+            <div className="text-center mb-16">
+              <div className="inline-block px-4 py-2 bg-purple-100 rounded-full mb-4">
+                <span className="text-sm font-semibold text-purple-700">무료상담 프로세스</span>
+              </div>
+              <h2 className="text-4xl font-bold tracking-tight sm:text-5xl text-slate-900 mb-4">
+                홈페이지 무료상담 프로세스
+              </h2>
+              <p className="text-lg text-slate-600 max-w-2xl mx-auto">
+                간단한 3단계로 시작하는 홈페이지 제작 상담
+              </p>
+            </div>
           </ScrollAnimation>
-          <div className="max-w-4xl mx-auto">
-            <div className="grid grid-cols-1 md:grid-cols-3 gap-8">
+          <div className="max-w-5xl mx-auto">
+            <div className="grid grid-cols-1 md:grid-cols-3 gap-6 lg:gap-8">
               <ScrollAnimation direction="up" delay={0}>
-                <div className="text-center">
-                  <div className="flex h-16 w-16 items-center justify-center rounded-full bg-gradient-to-r from-purple-500 to-purple-600 text-white text-2xl font-bold shadow-md mb-4 mx-auto">
-                    1
+                <div className="group relative flex flex-col h-full min-h-[280px] p-8 rounded-2xl bg-white border border-slate-200 shadow-md hover:shadow-2xl hover:shadow-purple-500/10 hover:-translate-y-2 transition-all duration-500 cursor-default">
+                  {/* Decorative Corner */}
+                  <div className="absolute top-0 right-0 w-24 h-24 bg-gradient-to-br from-purple-100/0 to-purple-100/0 group-hover:from-purple-100/30 group-hover:to-transparent rounded-bl-full transition-all duration-500"></div>
+                  
+                  <div className="relative z-10 flex flex-col items-center text-center h-full">
+                    <div className="relative mb-6">
+                      <div className="flex h-20 w-20 items-center justify-center rounded-full bg-gradient-to-br from-purple-500 via-purple-600 to-purple-700 text-white text-3xl font-bold shadow-xl shadow-purple-500/40 group-hover:scale-110 group-hover:shadow-purple-500/60 transition-all duration-500">
+                        1
+                      </div>
+                    </div>
+                    <h3 className="text-xl font-bold text-slate-900 mb-3 group-hover:text-purple-700 transition-colors duration-300">
+                      고객 정보입력
+                    </h3>
+                    <p className="text-sm text-slate-600 leading-relaxed group-hover:text-slate-700 transition-colors duration-300 flex-grow">
+                      우선 아래의 정보를 입력해주세요.
+                    </p>
+                    
+                    {/* Bottom Accent Line */}
+                    <div className="absolute bottom-0 left-0 right-0 h-1 bg-gradient-to-r from-transparent via-purple-500 to-transparent transform scale-x-0 group-hover:scale-x-100 transition-transform duration-500 origin-center rounded-full"></div>
                   </div>
-                  <h3 className="text-lg font-semibold text-slate-900 mb-2">고객 정보입력</h3>
-                  <p className="text-slate-600 text-sm">우선 아래의 정보를 입력해주세요.</p>
                 </div>
               </ScrollAnimation>
+              
               <ScrollAnimation direction="up" delay={100}>
-                <div className="text-center">
-                  <div className="flex h-16 w-16 items-center justify-center rounded-full bg-gradient-to-r from-purple-500 to-purple-600 text-white text-2xl font-bold shadow-md mb-4 mx-auto">
-                    2
+                <div className="group relative flex flex-col h-full min-h-[280px] p-8 rounded-2xl bg-white border-2 border-purple-500 shadow-lg hover:shadow-2xl hover:shadow-purple-500/20 hover:-translate-y-2 transition-all duration-500 cursor-default">
+                  {/* Decorative Corner */}
+                  <div className="absolute top-0 right-0 w-24 h-24 bg-gradient-to-br from-purple-100/30 to-transparent rounded-bl-full"></div>
+                  
+                  <div className="relative z-10 flex flex-col items-center text-center h-full">
+                    <div className="relative mb-6">
+                      <div className="flex h-20 w-20 items-center justify-center rounded-full bg-gradient-to-br from-purple-500 via-purple-600 to-purple-700 text-white text-3xl font-bold shadow-xl shadow-purple-500/40 group-hover:scale-110 group-hover:shadow-purple-500/60 transition-all duration-500 ring-4 ring-purple-200">
+                        2
+                      </div>
+                    </div>
+                    <h3 className="text-xl font-bold text-slate-900 mb-3 group-hover:text-purple-700 transition-colors duration-300">
+                      고객문의 접수
+                    </h3>
+                    <p className="text-sm text-slate-600 leading-relaxed group-hover:text-slate-700 transition-colors duration-300 flex-grow">
+                      양식에 맞게 문의내용 접수
+                    </p>
+                    
+                    {/* Bottom Accent Line */}
+                    <div className="absolute bottom-0 left-0 right-0 h-1.5 bg-gradient-to-r from-transparent via-purple-500 to-transparent rounded-full"></div>
                   </div>
-                  <h3 className="text-lg font-semibold text-slate-900 mb-2">고객문의 접수</h3>
-                  <p className="text-slate-600 text-sm">온라인 혹은 전화로 홈페이지에 대한 고민과 요구사항 접수</p>
                 </div>
               </ScrollAnimation>
+              
               <ScrollAnimation direction="up" delay={200}>
-                <div className="text-center">
-                  <div className="flex h-16 w-16 items-center justify-center rounded-full bg-gradient-to-r from-purple-500 to-purple-600 text-white text-2xl font-bold shadow-md mb-4 mx-auto">
-                    3
+                <div className="group relative flex flex-col h-full min-h-[280px] p-8 rounded-2xl bg-white border border-slate-200 shadow-md hover:shadow-2xl hover:shadow-purple-500/10 hover:-translate-y-2 transition-all duration-500 cursor-default">
+                  {/* Decorative Corner */}
+                  <div className="absolute top-0 right-0 w-24 h-24 bg-gradient-to-br from-purple-100/0 to-purple-100/0 group-hover:from-purple-100/30 group-hover:to-transparent rounded-bl-full transition-all duration-500"></div>
+                  
+                  <div className="relative z-10 flex flex-col items-center text-center h-full">
+                    <div className="relative mb-6">
+                      <div className="flex h-20 w-20 items-center justify-center rounded-full bg-gradient-to-br from-purple-500 via-purple-600 to-purple-700 text-white text-3xl font-bold shadow-xl shadow-purple-500/40 group-hover:scale-110 group-hover:shadow-purple-500/60 transition-all duration-500">
+                        3
+                      </div>
+                    </div>
+                    <h3 className="text-xl font-bold text-slate-900 mb-3 group-hover:text-purple-700 transition-colors duration-300">
+                      견적안내
+                    </h3>
+                    <p className="text-sm text-slate-600 leading-relaxed group-hover:text-slate-700 transition-colors duration-300 flex-grow">
+                      담당자 배정 및 방문 또는 온라인으로 상세사항 협의 후 견적서 제출
+                    </p>
+                    
+                    {/* Bottom Accent Line */}
+                    <div className="absolute bottom-0 left-0 right-0 h-1 bg-gradient-to-r from-transparent via-purple-500 to-transparent transform scale-x-0 group-hover:scale-x-100 transition-transform duration-500 origin-center rounded-full"></div>
                   </div>
-                  <h3 className="text-lg font-semibold text-slate-900 mb-2">견적안내</h3>
-                  <p className="text-slate-600 text-sm">담당자 배정 및 방문 또는 온라인으로 상세사항 협의 후 견적서 제출</p>
                 </div>
               </ScrollAnimation>
             </div>
