@@ -30,22 +30,6 @@ export default function AboutPage() {
 
   return (
     <div className="bg-white">
-      {/* Hero Section */}
-      <div className="w-full py-12 md:py-16">
-        <div className="container mx-auto px-4">
-          <ScrollAnimation direction="fade">
-          <div className="mx-auto max-w-3xl text-center space-y-6 mb-16">
-        <h1 className="text-4xl font-bold tracking-tight sm:text-5xl md:text-6xl">
-          회사 소개
-        </h1>
-        <p className="text-xl text-purple-600">
-          소상공인과 함께 성장하는 피플네트웍스
-        </p>
-          </div>
-          </ScrollAnimation>
-        </div>
-      </div>
-
       {/* Combined Sections with Fixed Background */}
       <div className="relative">
         {/* Single Fixed Background Image for both sections */}
@@ -56,6 +40,22 @@ export default function AboutPage() {
             zIndex: 0,
           }}
         ></div>
+        
+        {/* Hero Section */}
+        <div className="w-full py-12 md:py-16 relative" style={{ zIndex: 1 }}>
+          <div className="container mx-auto px-4">
+            <ScrollAnimation direction="fade">
+              <div className="mx-auto max-w-3xl text-center space-y-6 mb-16">
+                <h1 className="text-4xl font-bold tracking-tight sm:text-5xl md:text-6xl text-slate-900">
+                  회사 소개
+                </h1>
+                <p className="text-xl text-purple-600">
+                  소상공인과 함께 성장하는 피플네트웍스
+                </p>
+              </div>
+            </ScrollAnimation>
+          </div>
+        </div>
         
         {/* Story Section */}
         <section className="w-full mb-20 py-20 md:py-28 relative" style={{ zIndex: 1 }}>
