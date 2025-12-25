@@ -5,7 +5,7 @@ import Link from "next/link";
 import { Button } from "@/components/ui/button";
 import { Card, CardContent, CardDescription, CardHeader, CardTitle } from "@/components/ui/card";
 import { ScrollAnimation } from "@/components/ui/scroll-animation";
-import { ArrowRight, CheckCircle2, Globe, Zap, Users, Star } from "lucide-react";
+import { ArrowRight, CheckCircle2, Globe, Zap, Users, Star, MessageCircle, Palette, Code, Rocket } from "lucide-react";
 
 export default function Home() {
   // Background images array
@@ -70,10 +70,30 @@ export default function Home() {
   ];
 
   const processSteps = [
-    "1. 상담 및 요구사항 확인",
-    "2. 디자인 제안 및 확정",
-    "3. 제작 및 리뷰",
-    "4. 최종 검수 및 오픈",
+    {
+      number: 1,
+      title: "상담 및 요구사항 확인",
+      description: "고객의 니즈를 파악하고 맞춤형 솔루션을 제안합니다",
+      icon: MessageCircle,
+    },
+    {
+      number: 2,
+      title: "디자인 제안 및 확정",
+      description: "브랜드 아이덴티티에 맞는 디자인을 제안하고 확정합니다",
+      icon: Palette,
+    },
+    {
+      number: 3,
+      title: "제작 및 리뷰",
+      description: "체계적인 프로세스로 제작하고 중간 리뷰를 진행합니다",
+      icon: Code,
+    },
+    {
+      number: 4,
+      title: "최종 검수 및 오픈",
+      description: "완성된 홈페이지를 검수하고 성공적으로 오픈합니다",
+      icon: Rocket,
+    },
   ];
 
   return (
@@ -172,42 +192,89 @@ export default function Home() {
       </section>
 
       {/* Process Section */}
-      <section className="w-full py-16 md:py-24 bg-white">
-        <div className="container mx-auto px-4">
-          <div className="mx-auto max-w-4xl">
+      <section className="w-full py-20 md:py-28 bg-gradient-to-b from-white via-purple-50/30 to-white relative overflow-hidden">
+        {/* Decorative Background Elements */}
+        <div className="absolute inset-0 opacity-5">
+          <div className="absolute top-20 left-10 w-72 h-72 bg-purple-500 rounded-full blur-3xl"></div>
+          <div className="absolute bottom-20 right-10 w-96 h-96 bg-purple-600 rounded-full blur-3xl"></div>
+        </div>
+        
+        <div className="container mx-auto px-4 relative z-10">
+          <div className="mx-auto max-w-7xl">
             <ScrollAnimation direction="fade">
-              <div className="text-center space-y-4 mb-12">
-                <h2 className="text-3xl font-bold tracking-tight sm:text-4xl text-slate-900">
-                  제작 프로세스
+              <div className="text-center space-y-4 mb-16">
+                <div className="inline-block px-4 py-2 bg-purple-100 rounded-full mb-4">
+                  <span className="text-sm font-semibold text-purple-700">제작 프로세스</span>
+                </div>
+                <h2 className="text-4xl font-bold tracking-tight sm:text-5xl text-slate-900">
+                  명확하고 체계적인
+                  <br />
+                  <span className="bg-gradient-to-r from-purple-600 to-purple-500 bg-clip-text text-transparent">
+                    제작 과정
+                  </span>
                 </h2>
-                <p className="text-lg text-slate-600">
-                  단계별 명확한 진행 과정
+                <p className="text-lg text-slate-600 max-w-2xl mx-auto">
+                  단계별 명확한 진행 과정으로 고객과 함께 성장합니다
                 </p>
               </div>
             </ScrollAnimation>
+            
             <div className="relative">
-              <div className="grid grid-cols-1 md:grid-cols-4 gap-6 md:gap-8 relative">
-                {processSteps.map((step, index) => (
-                  <div key={index} className="relative">
-                    <ScrollAnimation direction="up" delay={index * 100}>
-                      <div className="group relative flex flex-col items-center justify-center text-center h-full min-h-[200px] p-6 rounded-xl border-2 border-slate-200 bg-gradient-to-br from-white to-slate-50 shadow-sm hover:shadow-xl hover:shadow-purple-500/20 hover:-translate-y-2 hover:border-purple-300 transition-all duration-300 cursor-pointer">
-                        {/* Number Badge with Animation */}
-                        <div className="relative mb-4">
-                          <div className="flex h-14 w-14 items-center justify-center rounded-full bg-gradient-to-r from-purple-500 via-purple-600 to-purple-500 text-white text-xl font-bold shadow-lg group-hover:scale-110 group-hover:shadow-purple-500/50 transition-all duration-300">
-                            {index + 1}
-                          </div>
-                          <div className="absolute inset-0 rounded-full bg-gradient-to-r from-purple-500 to-purple-600 opacity-0 group-hover:opacity-20 blur-xl transition-opacity duration-300"></div>
+              {/* Connection Line (Desktop Only) */}
+              <div className="hidden md:block absolute top-24 left-0 right-0 h-0.5 bg-gradient-to-r from-transparent via-purple-300 to-transparent"></div>
+              
+              <div className="grid grid-cols-1 md:grid-cols-4 gap-6 md:gap-4 lg:gap-6 relative">
+                {processSteps.map((step, index) => {
+                  const IconComponent = step.icon;
+                  return (
+                    <div key={step.number} className="relative">
+                      {/* Arrow between steps (Desktop Only) */}
+                      {index < processSteps.length - 1 && (
+                        <div className="hidden md:block absolute top-24 -right-2 lg:-right-4 z-20">
+                          <ArrowRight className="h-6 w-6 text-purple-400" />
                         </div>
-                        {/* Step Text */}
-                        <p className="font-semibold text-slate-900 text-sm leading-relaxed group-hover:text-purple-600 transition-colors duration-300">
-                          {step}
-                        </p>
-                        {/* Hover Indicator */}
-                        <div className="absolute bottom-4 left-1/2 transform -translate-x-1/2 w-0 h-1 bg-gradient-to-r from-purple-500 to-purple-600 group-hover:w-12 transition-all duration-300 rounded-full"></div>
-                      </div>
-                    </ScrollAnimation>
-                  </div>
-                ))}
+                      )}
+                      
+                      <ScrollAnimation direction="up" delay={index * 100}>
+                        <div className="group relative flex flex-col h-full min-h-[280px] p-8 rounded-2xl border border-slate-200/80 bg-white/80 backdrop-blur-sm shadow-lg hover:shadow-2xl hover:shadow-purple-500/20 hover:-translate-y-3 hover:border-purple-300 transition-all duration-500 cursor-pointer overflow-hidden">
+                          {/* Gradient Overlay on Hover */}
+                          <div className="absolute inset-0 bg-gradient-to-br from-purple-50/0 via-purple-50/0 to-purple-50/0 group-hover:from-purple-50/50 group-hover:via-purple-50/30 group-hover:to-white transition-all duration-500"></div>
+                          
+                          <div className="relative z-10 flex flex-col items-center text-center h-full">
+                            {/* Icon Badge with Enhanced Animation */}
+                            <div className="relative mb-6">
+                              {/* Outer Glow Ring */}
+                              <div className="absolute inset-0 rounded-2xl bg-gradient-to-r from-purple-500 to-purple-600 opacity-0 group-hover:opacity-20 blur-xl group-hover:blur-2xl transition-all duration-500 scale-75 group-hover:scale-110"></div>
+                              
+                              {/* Icon Container */}
+                              <div className="relative flex h-20 w-20 items-center justify-center rounded-2xl bg-gradient-to-br from-purple-500 via-purple-600 to-purple-700 text-white shadow-xl shadow-purple-500/30 group-hover:scale-110 group-hover:shadow-purple-500/50 group-hover:rotate-3 transition-all duration-500">
+                                <IconComponent className="h-10 w-10" strokeWidth={2} />
+                              </div>
+                              
+                              {/* Number Badge */}
+                              <div className="absolute -top-2 -right-2 flex h-8 w-8 items-center justify-center rounded-full bg-purple-600 text-white text-sm font-bold shadow-lg ring-4 ring-white group-hover:scale-125 group-hover:bg-purple-700 transition-all duration-500">
+                                {step.number}
+                              </div>
+                            </div>
+                            
+                            {/* Step Title */}
+                            <h3 className="font-bold text-slate-900 text-lg mb-3 group-hover:text-purple-700 transition-colors duration-300">
+                              {step.number}. {step.title}
+                            </h3>
+                            
+                            {/* Step Description */}
+                            <p className="text-sm text-slate-600 leading-relaxed group-hover:text-slate-700 transition-colors duration-300 flex-grow">
+                              {step.description}
+                            </p>
+                            
+                            {/* Bottom Indicator Bar */}
+                            <div className="absolute bottom-0 left-0 right-0 h-1 bg-gradient-to-r from-transparent via-purple-500 to-transparent transform scale-x-0 group-hover:scale-x-100 transition-transform duration-500 origin-center"></div>
+                          </div>
+                        </div>
+                      </ScrollAnimation>
+                    </div>
+                  );
+                })}
               </div>
             </div>
           </div>
