@@ -15,7 +15,7 @@ import {
   SelectValue,
 } from "@/components/ui/select";
 import { Checkbox } from "@/components/ui/checkbox";
-import { Phone, Mail, MessageCircle, CheckCircle2, Loader2, FileText, User, Building2 } from "lucide-react";
+import { MessageCircle, CheckCircle2, Loader2, FileText, User, Building2 } from "lucide-react";
 
 export default function ContactPage() {
   const [formData, setFormData] = useState({
@@ -524,53 +524,38 @@ export default function ContactPage() {
       <section className="w-full bg-slate-50 py-16">
         <div className="container mx-auto px-4">
           <div className="max-w-5xl mx-auto">
-            <div className="grid grid-cols-1 md:grid-cols-2 gap-6">
+            <div className="grid grid-cols-1 md:grid-cols-2 gap-6 items-stretch">
               <ScrollAnimation direction="fade" delay={200}>
-                <Card className="bg-slate-900 border-slate-800">
+                <Card className="bg-slate-900 border-slate-800 h-full flex flex-col">
                   <CardHeader>
                     <CardTitle className="text-white">다른 방법으로 연락하기</CardTitle>
                   </CardHeader>
-                  <CardContent className="space-y-6">
-                    <div className="flex items-start gap-4">
-                      <div className="p-3 rounded-full bg-purple-500/10">
-                        <Phone className="h-5 w-5 text-purple-400" />
-                      </div>
-                      <div>
-                        <h3 className="font-semibold mb-1 text-white">전화</h3>
-                        <p className="text-sm text-white/80">(문의 필요)</p>
-                        <p className="text-xs text-white/70 mt-1">평일 09:00 - 18:00</p>
-                      </div>
-                    </div>
-                    <div className="flex items-start gap-4">
-                      <div className="p-3 rounded-full bg-purple-500/10">
-                        <Mail className="h-5 w-5 text-purple-400" />
-                      </div>
-                      <div>
-                        <h3 className="font-semibold mb-1 text-white">이메일</h3>
-                        <p className="text-sm text-white/80">(문의 필요)</p>
-                        <p className="text-xs text-white/70 mt-1">24시간 접수 가능</p>
-                      </div>
-                    </div>
-                    <div className="flex items-start gap-4">
+                  <CardContent className="space-y-6 flex-grow flex flex-col justify-center">
+                    <a 
+                      href="https://open.kakao.com/o/sHtN7Mzh" 
+                      target="_blank" 
+                      rel="noopener noreferrer"
+                      className="flex items-start gap-4 hover:opacity-80 transition-opacity"
+                    >
                       <div className="p-3 rounded-full bg-purple-500/10">
                         <MessageCircle className="h-5 w-5 text-purple-400" />
                       </div>
                       <div>
                         <h3 className="font-semibold mb-1 text-white">카카오톡</h3>
-                        <p className="text-sm text-white/80">(문의 필요)</p>
-                        <p className="text-xs text-white/70 mt-1">실시간 상담 가능</p>
+                        <p className="text-sm text-white/80">실시간 상담 가능</p>
+                        <p className="text-xs text-white/70 mt-1">1:1 상담하기</p>
                       </div>
-                    </div>
+                    </a>
                   </CardContent>
                 </Card>
               </ScrollAnimation>
 
               <ScrollAnimation direction="fade" delay={300}>
-                <Card className="bg-slate-900 border-slate-800">
+                <Card className="bg-slate-900 border-slate-800 h-full flex flex-col">
                   <CardHeader>
                     <CardTitle className="text-white">빠른 응답 시간</CardTitle>
                   </CardHeader>
-                  <CardContent>
+                  <CardContent className="flex-grow flex flex-col justify-center">
                     <ul className="space-y-2 text-sm text-white/80">
                       <li className="flex items-start gap-2">
                         <CheckCircle2 className="h-4 w-4 text-purple-400 mt-0.5 shrink-0" />

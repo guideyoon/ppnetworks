@@ -67,3 +67,5 @@ npm run dev
 - ✅ `http://localhost:3004`로 접속 가능
 - ✅ 홈페이지가 정상적으로 표시됨
 
+
+

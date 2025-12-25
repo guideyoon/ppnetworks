@@ -48,3 +48,5 @@ CONTACT_EMAIL=yourname@gmail.com
 - Resend Dashboard → Emails에서 발송 로그를 확인할 수 있습니다
 - 무료 티어: 월 3,000통까지 무료
 
+
+

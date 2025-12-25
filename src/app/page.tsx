@@ -12,6 +12,7 @@ export default function Home() {
   const backgroundImages = [
     "/hero-bg.jpg",
     "/hero-bg2.jpg",
+    "/hero-bg3.jpg",
   ];
 
   const [currentImageIndex, setCurrentImageIndex] = useState(0);
@@ -180,36 +181,49 @@ export default function Home() {
                   제작 프로세스
                 </h2>
                 <p className="text-lg text-slate-600">
-                  간단하고 명확한 제작 과정
+                  단계별 명확한 진행 과정
                 </p>
               </div>
             </ScrollAnimation>
-            <div className="grid grid-cols-1 md:grid-cols-4 gap-6">
-              {processSteps.map((step, index) => (
-                <ScrollAnimation key={index} direction="up" delay={index * 100}>
-                  <div className="flex flex-col items-center justify-center text-center h-full min-h-[180px] p-6 rounded-lg border-2 border-slate-300 bg-white shadow-sm hover:shadow-md transition-shadow">
-                    <div className="flex h-12 w-12 items-center justify-center rounded-full bg-gradient-to-r from-purple-500 to-purple-600 text-white text-lg font-bold shadow-sm mb-4">
-                      {index + 1}
-                    </div>
-                    <p className="font-medium text-slate-900 text-sm leading-relaxed">{step}</p>
+            <div className="relative">
+              <div className="grid grid-cols-1 md:grid-cols-4 gap-6 md:gap-8 relative">
+                {processSteps.map((step, index) => (
+                  <div key={index} className="relative">
+                    <ScrollAnimation direction="up" delay={index * 100}>
+                      <div className="group relative flex flex-col items-center justify-center text-center h-full min-h-[200px] p-6 rounded-xl border-2 border-slate-200 bg-gradient-to-br from-white to-slate-50 shadow-sm hover:shadow-xl hover:shadow-purple-500/20 hover:-translate-y-2 hover:border-purple-300 transition-all duration-300 cursor-pointer">
+                        {/* Number Badge with Animation */}
+                        <div className="relative mb-4">
+                          <div className="flex h-14 w-14 items-center justify-center rounded-full bg-gradient-to-r from-purple-500 via-purple-600 to-purple-500 text-white text-xl font-bold shadow-lg group-hover:scale-110 group-hover:shadow-purple-500/50 transition-all duration-300">
+                            {index + 1}
+                          </div>
+                          <div className="absolute inset-0 rounded-full bg-gradient-to-r from-purple-500 to-purple-600 opacity-0 group-hover:opacity-20 blur-xl transition-opacity duration-300"></div>
+                        </div>
+                        {/* Step Text */}
+                        <p className="font-semibold text-slate-900 text-sm leading-relaxed group-hover:text-purple-600 transition-colors duration-300">
+                          {step}
+                        </p>
+                        {/* Hover Indicator */}
+                        <div className="absolute bottom-4 left-1/2 transform -translate-x-1/2 w-0 h-1 bg-gradient-to-r from-purple-500 to-purple-600 group-hover:w-12 transition-all duration-300 rounded-full"></div>
+                      </div>
+                    </ScrollAnimation>
                   </div>
-                </ScrollAnimation>
-              ))}
+                ))}
+              </div>
             </div>
           </div>
         </div>
       </section>
 
       {/* Portfolio Section */}
-      <section className="w-full py-16 md:py-24 bg-slate-50">
+      <section className="w-full py-16 md:py-24 bg-gradient-to-br from-purple-600 via-purple-700 to-purple-800">
         <div className="container mx-auto px-4">
           <div className="mx-auto max-w-6xl">
           <ScrollAnimation direction="fade">
             <div className="text-center space-y-4 mb-12">
-              <h2 className="text-3xl font-bold tracking-tight sm:text-4xl text-slate-900">
+              <h2 className="text-3xl font-bold tracking-tight sm:text-4xl text-white">
                 제작 사례
               </h2>
-              <p className="text-lg text-slate-600">
+              <p className="text-lg text-white/90">
                 실제로 제작한 다양한 업종의 홈페이지
               </p>
             </div>
@@ -217,7 +231,7 @@ export default function Home() {
           <div className="grid grid-cols-1 md:grid-cols-3 gap-6 mb-8">
             {portfolioItems.map((item, index) => (
               <ScrollAnimation key={item.id} direction="up" delay={index * 100}>
-                <Card className="overflow-hidden hover:shadow-lg transition-all bg-white border-slate-200 shadow-sm">
+                <Card className="overflow-hidden hover:shadow-lg transition-all bg-white border-slate-200 shadow-sm hover:shadow-xl hover:-translate-y-1">
                   <div className="aspect-video bg-slate-100 flex items-center justify-center">
                     <Globe className="h-12 w-12 text-slate-400" />
                   </div>
@@ -234,7 +248,7 @@ export default function Home() {
           </div>
           <ScrollAnimation direction="fade" delay={300}>
             <div className="text-center">
-              <Button asChild variant="outline" size="lg" className="border-slate-300 text-white hover:bg-slate-50 hover:border-slate-400 hover:text-black">
+              <Button asChild variant="outline" size="lg" className="border-2 border-white bg-white/10 backdrop-blur-sm text-white hover:bg-white hover:text-purple-600 hover:border-white transition-all duration-300">
                 <Link href="/portfolio">
                   더 많은 포트폴리오 보기
                   <ArrowRight className="ml-2 h-5 w-5" />

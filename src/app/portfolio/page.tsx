@@ -1,6 +1,7 @@
 "use client";
 
 import { useState } from "react";
+import Image from "next/image";
 import { Card, CardContent, CardDescription, CardHeader, CardTitle } from "@/components/ui/card";
 import { Button } from "@/components/ui/button";
 import { ScrollAnimation } from "@/components/ui/scroll-animation";
@@ -28,11 +29,11 @@ const portfolioItems = [
   },
   {
     id: 3,
-    title: "레스토랑 그릴",
+    title: "따뜻한 국밥",
     category: "음식점",
-    description: "프리미엄 레스토랑 홈페이지",
-    thumbnail: "/placeholder-restaurant.jpg",
-    site_url: "https://example.com",
+    description: "마음을 데우는 진한 국밥 한 그릇",
+    thumbnail: "/gukbap-thumbnail.jpg.png",
+    site_url: "https://guideyoon.github.io/my-homapage/",
     tags: ["반응형", "메뉴표"],
   },
   {
@@ -128,8 +129,19 @@ export default function PortfolioPage() {
             <ScrollAnimation key={item.id} direction="up" delay={index * 100}>
               <Card className="h-full flex flex-col overflow-hidden hover:shadow-lg transition-shadow group bg-white border-2 border-slate-300 shadow-sm">
               <div className="aspect-video bg-slate-100 flex items-center justify-center relative overflow-hidden">
-                <Globe className="h-16 w-16 text-slate-500 group-hover:scale-110 transition-transform" />
-                <div className="absolute inset-0 bg-black/0 group-hover:bg-black/5 transition-colors" />
+                <img
+                  src={item.thumbnail}
+                  alt={item.title}
+                  className="absolute inset-0 w-full h-full object-cover group-hover:scale-105 transition-transform duration-300"
+                  onError={(e) => {
+                    const target = e.target as HTMLImageElement;
+                    target.style.display = 'none';
+                  }}
+                />
+                <div className="absolute inset-0 flex items-center justify-center pointer-events-none z-0">
+                  <Globe className="h-16 w-16 text-slate-400 opacity-30" />
+                </div>
+                <div className="absolute inset-0 bg-black/0 group-hover:bg-black/5 transition-colors z-10" />
               </div>
               <CardHeader className="flex-1 flex flex-col pb-4">
                 <div className="flex items-start justify-between gap-2">
