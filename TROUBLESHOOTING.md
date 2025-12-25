@@ -7,7 +7,7 @@
    - 내용 확인:
      ```
      RESEND_API_KEY=re_YkosRx8t_6NFLQQbkmRdJKADMpzjAQ7Gc
-     CONTACT_EMAIL=peoplenetworks.help@gmail.com
+     CONTACT_EMAIL=facecap@naver.com
      ```
 
 2. **서버 재시작 확인**
@@ -46,7 +46,7 @@
 
 **해결**:
 - .env.local의 CONTACT_EMAIL 형식 확인
-- 올바른 이메일 형식: `peoplenetworks.help@gmail.com`
+- 올바른 이메일 형식: `facecap@naver.com`
 
 ### 문제 3: 스팸 폴더
 **증상**: 이메일이 도착하지 않음

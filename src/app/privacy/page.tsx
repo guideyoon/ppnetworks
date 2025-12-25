@@ -194,7 +194,7 @@ export default function PrivacyPage() {
                 <div className="bg-slate-800/50 p-4 rounded-lg space-y-2">
                   <p><strong className="text-purple-600">개인정보 보호책임자</strong></p>
                   <ul className="list-none space-y-1 text-slate-600">
-                    <li>이메일: peoplenetworks.help@gmail.com</li>
+                    <li>이메일: facecap@naver.com</li>
                   </ul>
                 </div>
                 <p className="text-slate-400 mt-4">
