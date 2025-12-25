@@ -208,10 +208,11 @@ export async function POST(request: NextRequest) {
 
       if (error) {
         console.error("이메일 발송 오류:", error);
+        console.error("오류 상세:", JSON.stringify(error, null, 2));
         return NextResponse.json(
           { 
             error: "이메일 발송 중 오류가 발생했습니다.",
-            details: process.env.NODE_ENV === 'development' ? JSON.stringify(error) : undefined
+            details: process.env.NODE_ENV === 'development' ? JSON.stringify(error, null, 2) : error.message || '알 수 없는 오류가 발생했습니다. Resend Dashboard를 확인해주세요.'
           },
           { status: 500 }
         );
@@ -233,7 +234,7 @@ export async function POST(request: NextRequest) {
       return NextResponse.json(
         { 
           error: "이메일 발송 중 오류가 발생했습니다. 다시 시도해주세요.",
-          details: process.env.NODE_ENV === 'development' ? emailError.message : undefined
+          details: process.env.NODE_ENV === 'development' ? emailError.message : (emailError.message || '알 수 없는 오류가 발생했습니다. 서버 로그를 확인해주세요.')
         },
         { status: 500 }
       );
