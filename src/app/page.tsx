@@ -192,90 +192,32 @@ export default function Home() {
       </section>
 
       {/* Process Section */}
-      <section className="w-full py-20 md:py-28 bg-gradient-to-b from-white via-purple-50/30 to-white relative overflow-hidden">
-        {/* Decorative Background Elements */}
-        <div className="absolute inset-0 opacity-5">
-          <div className="absolute top-20 left-10 w-72 h-72 bg-purple-500 rounded-full blur-3xl"></div>
-          <div className="absolute bottom-20 right-10 w-96 h-96 bg-purple-600 rounded-full blur-3xl"></div>
-        </div>
-        
-        <div className="container mx-auto px-4 relative z-10">
-          <div className="mx-auto max-w-7xl">
+      <section className="w-full py-16 md:py-24 bg-white">
+        <div className="container mx-auto px-4">
+          <div className="mx-auto max-w-4xl">
             <ScrollAnimation direction="fade">
-              <div className="text-center space-y-4 mb-16">
-                <div className="inline-block px-4 py-2 bg-purple-100 rounded-full mb-4">
-                  <span className="text-sm font-semibold text-purple-700">제작 프로세스</span>
-                </div>
-                <h2 className="text-4xl font-bold tracking-tight sm:text-5xl text-slate-900">
-                  명확하고 체계적인
-                  <br />
-                  <span className="bg-gradient-to-r from-purple-600 to-purple-500 bg-clip-text text-transparent">
-                    제작 과정
-                  </span>
+              <div className="text-center space-y-4 mb-12">
+                <h2 className="text-3xl font-bold tracking-tight sm:text-4xl text-slate-900">
+                  제작 프로세스
                 </h2>
-                <p className="text-lg text-slate-600 max-w-2xl mx-auto">
-                  단계별 명확한 진행 과정으로 고객과 함께 성장합니다
+                <p className="text-lg text-slate-600">
+                  단계별 명확한 진행 과정
                 </p>
               </div>
             </ScrollAnimation>
-            
-            <div className="relative">
-              <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-6 lg:gap-8 relative">
-                {processSteps.map((step, index) => {
-                  const IconComponent = step.icon;
-                  return (
-                    <div key={step.number} className="relative">
-                      <ScrollAnimation direction="up" delay={index * 100}>
-                        <div className="group relative flex flex-col h-full min-h-[320px] p-10 rounded-3xl bg-white border border-slate-100 shadow-md hover:shadow-2xl hover:shadow-purple-500/10 hover:-translate-y-4 transition-all duration-700 cursor-pointer overflow-hidden">
-                          {/* Animated Background Gradient */}
-                          <div className="absolute inset-0 bg-gradient-to-br from-purple-50/0 via-purple-50/0 to-purple-100/0 group-hover:from-purple-50/40 group-hover:via-purple-50/20 group-hover:to-white transition-all duration-700"></div>
-                          
-                          {/* Decorative Corner Accent */}
-                          <div className="absolute top-0 right-0 w-32 h-32 bg-gradient-to-br from-purple-100/0 to-purple-100/0 group-hover:from-purple-100/30 group-hover:to-transparent rounded-bl-full transition-all duration-700"></div>
-                          
-                          <div className="relative z-10 flex flex-col items-center text-center h-full">
-                            {/* Number Badge - Modern Design */}
-                            <div className="relative mb-8">
-                              {/* Outer Glow Effect */}
-                              <div className="absolute inset-0 rounded-full bg-gradient-to-r from-purple-400 to-purple-600 opacity-0 group-hover:opacity-30 blur-2xl group-hover:blur-3xl transition-all duration-700 scale-50 group-hover:scale-150"></div>
-                              
-                              {/* Main Number Circle */}
-                              <div className="relative flex h-24 w-24 items-center justify-center rounded-full bg-gradient-to-br from-purple-500 via-purple-600 to-purple-700 text-white shadow-2xl shadow-purple-500/40 group-hover:scale-110 group-hover:shadow-purple-500/60 group-hover:rotate-6 transition-all duration-700">
-                                <span className="text-3xl font-bold">{step.number}</span>
-                              </div>
-                              
-                              {/* Icon Overlay */}
-                              <div className="absolute inset-0 flex items-center justify-center opacity-0 group-hover:opacity-100 transition-opacity duration-700">
-                                <div className="flex h-16 w-16 items-center justify-center rounded-full bg-white/20 backdrop-blur-sm">
-                                  <IconComponent className="h-8 w-8 text-white" strokeWidth={2.5} />
-                                </div>
-                              </div>
-                            </div>
-                            
-                            {/* Step Title */}
-                            <h3 className="font-bold text-slate-900 text-xl mb-4 group-hover:text-purple-700 transition-colors duration-500 leading-tight">
-                              {step.title}
-                            </h3>
-                            
-                            {/* Step Description */}
-                            <p className="text-sm text-slate-600 leading-relaxed group-hover:text-slate-800 transition-colors duration-500 flex-grow max-w-[240px]">
-                              {step.description}
-                            </p>
-                            
-                            {/* Bottom Accent Line */}
-                            <div className="absolute bottom-0 left-0 right-0 h-1.5 bg-gradient-to-r from-transparent via-purple-500 to-transparent transform scale-x-0 group-hover:scale-x-100 transition-transform duration-700 origin-center rounded-full"></div>
-                            
-                            {/* Progress Indicator */}
-                            <div className="mt-6 w-full max-w-[200px] h-1 bg-slate-100 rounded-full overflow-hidden">
-                              <div className="h-full bg-gradient-to-r from-purple-500 to-purple-600 transform scale-x-0 group-hover:scale-x-100 transition-transform duration-700 origin-left rounded-full"></div>
-                            </div>
-                          </div>
-                        </div>
-                      </ScrollAnimation>
+            <div className="grid grid-cols-1 md:grid-cols-4 gap-6">
+              {processSteps.map((step, index) => (
+                <ScrollAnimation key={step.number} direction="up" delay={index * 100}>
+                  <div className="flex flex-col items-center justify-center text-center h-full min-h-[200px] p-6 rounded-lg border-2 border-slate-200 bg-white shadow-sm hover:shadow-md transition-shadow">
+                    <div className="flex h-14 w-14 items-center justify-center rounded-full bg-gradient-to-r from-purple-500 to-purple-600 text-white text-xl font-bold shadow-sm mb-4">
+                      {step.number}
                     </div>
-                  );
-                })}
-              </div>
+                    <p className="font-semibold text-slate-900 text-sm leading-relaxed">
+                      {step.number}. {step.title}
+                    </p>
+                  </div>
+                </ScrollAnimation>
+              ))}
             </div>
           </div>
         </div>
