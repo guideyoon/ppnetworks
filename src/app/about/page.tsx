@@ -216,10 +216,10 @@ export default function AboutPage() {
       </section>
 
       {/* Contact Info Section */}
-      <section className="w-full mb-12 bg-white py-16">
+      <section className="w-full mb-12 bg-gradient-to-b from-white to-slate-50 py-12">
         <div className="container mx-auto px-4">
           <ScrollAnimation direction="fade">
-            <div className="text-center space-y-4 mb-12">
+            <div className="text-center space-y-3 mb-8">
               <h2 className="text-3xl font-bold text-slate-900">연락처 정보</h2>
               <p className="text-lg text-slate-600">
                 언제든지 편하게 연락주세요
@@ -228,29 +228,30 @@ export default function AboutPage() {
           </ScrollAnimation>
           <ScrollAnimation direction="up">
             <div className="flex justify-center">
-              <Card className="max-w-xs bg-white border-slate-200 shadow-sm">
-                <CardHeader className="text-center">
-                  <a
-                    href="https://open.kakao.com/o/sHtN7Mzh"
-                    target="_blank"
-                    rel="noopener noreferrer"
-                    className="flex flex-col items-center hover:opacity-80 transition-opacity"
-                  >
-                    <CardTitle className="mb-3 text-slate-900">카카오톡</CardTitle>
-                    <MessageCircle className="h-12 w-12 text-primary mb-2" />
-                  </a>
-                </CardHeader>
-                <CardContent className="text-center">
-                  <a
-                    href="https://open.kakao.com/o/sHtN7Mzh"
-                    target="_blank"
-                    rel="noopener noreferrer"
-                    className="text-slate-600 hover:text-primary transition-colors inline-block"
-                  >
+              <a
+                href="https://open.kakao.com/o/sHtN7Mzh"
+                target="_blank"
+                rel="noopener noreferrer"
+                className="group relative flex flex-col items-center max-w-xs w-full p-8 rounded-2xl bg-white border-2 border-slate-200 shadow-md hover:shadow-xl hover:shadow-purple-500/10 hover:-translate-y-2 hover:border-purple-300 transition-all duration-500"
+              >
+                {/* Decorative Corner */}
+                <div className="absolute top-0 right-0 w-20 h-20 bg-gradient-to-br from-purple-100/0 to-purple-100/0 group-hover:from-purple-100/30 group-hover:to-transparent rounded-bl-full transition-all duration-500"></div>
+                
+                <div className="relative z-10 flex flex-col items-center">
+                  <div className="flex h-16 w-16 items-center justify-center rounded-xl bg-gradient-to-br from-purple-500 via-purple-600 to-purple-700 text-white shadow-lg shadow-purple-500/30 group-hover:scale-110 group-hover:shadow-purple-500/50 group-hover:rotate-3 transition-all duration-500 mb-4">
+                    <MessageCircle className="h-8 w-8" />
+                  </div>
+                  <h3 className="text-xl font-bold text-slate-900 mb-2 group-hover:text-purple-700 transition-colors duration-300">
+                    카카오톡
+                  </h3>
+                  <p className="text-slate-600 group-hover:text-purple-600 transition-colors duration-300">
                     1:1 상담하기
-                  </a>
-                </CardContent>
-              </Card>
+                  </p>
+                  
+                  {/* Bottom Accent Line */}
+                  <div className="absolute bottom-0 left-0 right-0 h-1 bg-gradient-to-r from-transparent via-purple-500 to-transparent transform scale-x-0 group-hover:scale-x-100 transition-transform duration-500 origin-center rounded-full"></div>
+                </div>
+              </a>
             </div>
           </ScrollAnimation>
         </div>
