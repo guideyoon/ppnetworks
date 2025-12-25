@@ -162,49 +162,60 @@ export default function ServicePage() {
         </div>
       </section>
 
-      {/* Process Section */}
+      {/* Pricing Section */}
       <section className="w-full mb-20 bg-white py-16">
         <div className="container mx-auto px-4">
           <ScrollAnimation direction="fade">
             <div className="text-center space-y-4 mb-12">
-              <h2 className="text-3xl font-bold text-slate-900">제작 프로세스</h2>
+              <h2 className="text-3xl font-bold text-slate-900">가격 안내</h2>
               <p className="text-lg text-slate-600">
-                단계별 명확한 진행 과정
+                목적에 맞는 플랜을 선택하세요
               </p>
             </div>
           </ScrollAnimation>
-          <div className="max-w-4xl mx-auto">
-            <div className="grid grid-cols-1 md:grid-cols-4 gap-6">
-              {[
-                "1. 상담 및 요구사항 확인",
-                "2. 디자인 제안 및 확정",
-                "3. 제작 및 리뷰",
-                "4. 최종 검수 및 오픈",
-              ].map((step, index) => (
-                <ScrollAnimation key={index} direction="up" delay={index * 100}>
-                  <div className="flex flex-col items-center justify-center text-center h-full min-h-[180px] p-6 rounded-lg border-2 border-slate-300 bg-white shadow-sm hover:shadow-md transition-shadow">
-                    <div className="flex h-12 w-12 items-center justify-center rounded-full bg-gradient-to-r from-purple-500 to-purple-600 text-white text-lg font-bold mx-auto shadow-sm mb-4">
-                      {index + 1}
+          <div className="grid grid-cols-1 md:grid-cols-3 gap-8 max-w-6xl mx-auto">
+            {pricingPlans.map((plan, index) => (
+              <ScrollAnimation key={index} direction="up" delay={index * 100}>
+                <Card className={`h-full flex flex-col border-2 ${
+                  index === 1 
+                    ? "border-purple-500 shadow-lg scale-105" 
+                    : "border-slate-300 shadow-sm"
+                } bg-white hover:shadow-xl transition-all`}>
+                  <CardHeader className="text-center pb-4">
+                    <CardTitle className="text-2xl text-slate-900 mb-2">{plan.name}</CardTitle>
+                    <div className="text-3xl font-bold text-purple-600 mb-2">{plan.price}</div>
+                    <CardDescription className="text-base text-slate-600">{plan.description}</CardDescription>
+                  </CardHeader>
+                  <CardContent className="flex-grow">
+                    <ul className="space-y-3">
+                      {plan.features.map((feature, idx) => (
+                        <li key={idx} className="flex items-start gap-2 text-sm text-slate-700">
+                          <CheckCircle2 className="h-5 w-5 text-purple-600 mt-0.5 shrink-0" />
+                          <span>{feature}</span>
+                        </li>
+                      ))}
+                    </ul>
+                    <div className="mt-8">
+                      <Button 
+                        asChild 
+                        className={`w-full ${
+                          index === 1 
+                            ? "bg-gradient-to-r from-purple-500 to-purple-600 hover:from-purple-600 hover:to-purple-700 text-white" 
+                            : "bg-slate-100 text-slate-900 hover:bg-slate-200"
+                        }`}
+                      >
+                        <Link href="/contact">
+                          {plan.name === "커스텀" ? "견적 문의하기" : "플랜 선택하기"}
+                        </Link>
+                      </Button>
                     </div>
-                    <p className="font-medium text-slate-900 text-sm leading-relaxed">{step}</p>
-                  </div>
-                </ScrollAnimation>
-              ))}
-            </div>
+                  </CardContent>
+                </Card>
+              </ScrollAnimation>
+            ))}
           </div>
         </div>
       </section>
-
-      {/* Pricing Section */}
-      {/* <section className="mb-20">
-        <div className="text-center space-y-4 mb-12">
-          <h2 className="text-3xl font-bold">가격 안내</h2>
-          <p className="text-lg text-muted-foreground">
-            목적에 맞는 플랜을 선택하세요
-          </p>
-        </div>
-        가격 안내 내용은 추후 업데이트 예정
-      </section> */}
 
       {/* FAQ Section */}
       <section className="w-full mb-12 bg-slate-50 py-16">
