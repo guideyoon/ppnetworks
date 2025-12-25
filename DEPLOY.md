@@ -32,7 +32,7 @@ Vercel이 자동으로 Next.js 프로젝트를 감지합니다. 다음 설정을
 #### Production 환경 변수:
 ```
 RESEND_API_KEY = re_LuxBsWMe_GSR6WFZAvMjSKY9jwzzYyz6y
-CONTACT_EMAIL = facecap@naver.com
+CONTACT_EMAIL = peoplenetworks.help@gmail.com
 ```
 
 #### 추가 방법:
