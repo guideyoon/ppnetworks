@@ -258,11 +258,11 @@ export default function AboutPage() {
       </section>
 
       {/* CTA Section */}
-      <div className="w-full bg-slate-50 py-16">
+      <div className="w-full bg-white py-16">
         <div className="container mx-auto px-4">
           <div className="max-w-2xl mx-auto text-center">
             <ScrollAnimation direction="up">
-              <Card className="border-2 border-slate-300 bg-white shadow-md">
+              <Card className="border-2 border-purple-200 bg-gradient-to-br from-purple-50 to-white shadow-lg hover:shadow-xl transition-shadow">
             <CardHeader className="space-y-4">
               <CardTitle className="text-2xl text-slate-900">함께 시작하시겠어요?</CardTitle>
               <CardDescription className="text-lg text-slate-600">
@@ -270,7 +270,7 @@ export default function AboutPage() {
               </CardDescription>
             </CardHeader>
             <CardContent>
-              <Button asChild size="lg" className="text-lg px-8">
+              <Button asChild size="lg" className="text-lg px-8 bg-gradient-to-r from-purple-500 to-purple-600 hover:from-purple-600 hover:to-purple-700 text-white border-0">
                 <Link href="/contact">무료 상담 신청하기</Link>
               </Button>
             </CardContent>
