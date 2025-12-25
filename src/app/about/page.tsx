@@ -50,21 +50,17 @@ export default function AboutPage() {
       <div className="relative">
         {/* Single Fixed Background Image for both sections */}
         <div 
-          className="fixed top-0 left-0 right-0 bg-cover bg-center bg-no-repeat pointer-events-none" 
+          className="fixed top-0 left-0 right-0 bottom-0 bg-cover bg-center bg-no-repeat pointer-events-none" 
           style={{ 
             backgroundImage: 'url(/s3.jpg)', 
             zIndex: 0,
-            height: '100vh',
-            willChange: 'transform'
           }}
         ></div>
         
-        {/* Content Wrapper with z-index */}
-        <div style={{ position: 'relative', zIndex: 1 }}>
-          {/* Story Section */}
-          <section className="w-full mb-20 py-16 relative">
-            <div className="container mx-auto px-4">
-          <div className="max-w-4xl mx-auto">
+        {/* Story Section */}
+        <section className="w-full mb-20 py-16 relative" style={{ zIndex: 1 }}>
+          <div className="container mx-auto px-4">
+            <div className="max-w-4xl mx-auto">
             <ScrollAnimation direction="fade">
               <div className="prose prose-lg mx-auto">
                 <h2 className="text-3xl font-bold mb-6 text-center text-slate-900">브랜드 스토리</h2>
@@ -144,9 +140,9 @@ export default function AboutPage() {
                 </div>
               </ScrollAnimation>
             ))}
+            </div>
           </div>
-          </section>
-        </div>
+        </section>
       </div>
 
       {/* Approach Section */}
