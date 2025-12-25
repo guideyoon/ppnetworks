@@ -220,21 +220,11 @@ export default function Home() {
             </ScrollAnimation>
             
             <div className="relative">
-              {/* Connection Line (Desktop Only) */}
-              <div className="hidden md:block absolute top-24 left-0 right-0 h-0.5 bg-gradient-to-r from-transparent via-purple-300 to-transparent"></div>
-              
               <div className="grid grid-cols-1 md:grid-cols-4 gap-6 md:gap-4 lg:gap-6 relative">
                 {processSteps.map((step, index) => {
                   const IconComponent = step.icon;
                   return (
                     <div key={step.number} className="relative">
-                      {/* Arrow between steps (Desktop Only) */}
-                      {index < processSteps.length - 1 && (
-                        <div className="hidden md:block absolute top-24 -right-2 lg:-right-4 z-20">
-                          <ArrowRight className="h-6 w-6 text-purple-400" />
-                        </div>
-                      )}
-                      
                       <ScrollAnimation direction="up" delay={index * 100}>
                         <div className="group relative flex flex-col h-full min-h-[280px] p-8 rounded-2xl border border-slate-200/80 bg-white/80 backdrop-blur-sm shadow-lg hover:shadow-2xl hover:shadow-purple-500/20 hover:-translate-y-3 hover:border-purple-300 transition-all duration-500 cursor-pointer overflow-hidden">
                           {/* Gradient Overlay on Hover */}
