@@ -49,9 +49,7 @@ export default function AboutPage() {
       {/* Story Section */}
       <section className="w-full mb-20 relative py-16 overflow-hidden">
         {/* Background Image */}
-        <div className="absolute inset-0 bg-cover bg-center bg-no-repeat" style={{ backgroundImage: 'url(/s3.jpg)' }}>
-          <div className="absolute inset-0 bg-white/80 backdrop-blur-sm"></div>
-        </div>
+        <div className="absolute inset-0 bg-cover bg-center bg-no-repeat" style={{ backgroundImage: 'url(/s3.jpg)' }}></div>
         
         <div className="container mx-auto px-4 relative z-10">
           <div className="max-w-4xl mx-auto">
@@ -84,9 +82,7 @@ export default function AboutPage() {
       {/* Values Section */}
       <section className="w-full mb-20 py-20 relative overflow-hidden">
         {/* Background Image */}
-        <div className="absolute inset-0 bg-cover bg-center bg-no-repeat" style={{ backgroundImage: 'url(/s3.jpg)' }}>
-          <div className="absolute inset-0 bg-white/80 backdrop-blur-sm"></div>
-        </div>
+        <div className="absolute inset-0 bg-cover bg-center bg-no-repeat" style={{ backgroundImage: 'url(/s3.jpg)' }}></div>
         
         <div className="container mx-auto px-4 relative z-10">
           <ScrollAnimation direction="fade">
