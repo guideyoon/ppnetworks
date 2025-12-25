@@ -115,7 +115,7 @@ export default function Home() {
             />
           ))}
           {/* Overlay */}
-          <div className="absolute inset-0 bg-white/70 backdrop-blur-none"></div>
+          <div className="absolute inset-0 bg-white/70"></div>
         </div>
         
         {/* Content */}
