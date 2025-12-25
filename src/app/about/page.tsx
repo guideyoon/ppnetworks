@@ -47,8 +47,13 @@ export default function AboutPage() {
       </div>
 
       {/* Story Section */}
-      <section className="w-full mb-20 bg-slate-50 py-16">
-        <div className="container mx-auto px-4">
+      <section className="w-full mb-20 relative py-16 overflow-hidden">
+        {/* Background Image */}
+        <div className="absolute inset-0 bg-cover bg-center bg-no-repeat" style={{ backgroundImage: 'url(/s3.jpg)' }}>
+          <div className="absolute inset-0 bg-white/80 backdrop-blur-sm"></div>
+        </div>
+        
+        <div className="container mx-auto px-4 relative z-10">
           <div className="max-w-4xl mx-auto">
             <ScrollAnimation direction="fade">
               <div className="prose prose-lg mx-auto">
@@ -77,11 +82,10 @@ export default function AboutPage() {
       </section>
 
       {/* Values Section */}
-      <section className="w-full mb-20 bg-gradient-to-b from-white via-purple-50/20 to-white py-20 relative overflow-hidden">
-        {/* Decorative Background Elements */}
-        <div className="absolute inset-0 opacity-5">
-          <div className="absolute top-10 right-10 w-64 h-64 bg-purple-500 rounded-full blur-3xl"></div>
-          <div className="absolute bottom-10 left-10 w-80 h-80 bg-purple-600 rounded-full blur-3xl"></div>
+      <section className="w-full mb-20 py-20 relative overflow-hidden">
+        {/* Background Image */}
+        <div className="absolute inset-0 bg-cover bg-center bg-no-repeat" style={{ backgroundImage: 'url(/s3.jpg)' }}>
+          <div className="absolute inset-0 bg-white/80 backdrop-blur-sm"></div>
         </div>
         
         <div className="container mx-auto px-4 relative z-10">
