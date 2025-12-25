@@ -14,7 +14,7 @@ const portfolioItems = [
     title: "카페 모던",
     category: "카페/베이커리",
     description: "따뜻하고 모던한 분위기의 카페 홈페이지",
-    thumbnail: "/placeholder-cafe.jpg",
+    thumbnail: "/cafe-morden-thumbnail.jpg",
     site_url: "https://cafemorden.vercel.app/",
     tags: ["반응형", "메뉴표"],
   },
