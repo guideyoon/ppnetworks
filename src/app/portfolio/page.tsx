@@ -77,11 +77,22 @@ const categories = [
 
 export default function PortfolioPage() {
   const [selectedCategory, setSelectedCategory] = useState("전체");
+  const [loadedImages, setLoadedImages] = useState<Set<number>>(new Set());
 
   const filteredItems =
     selectedCategory === "전체"
       ? portfolioItems
       : portfolioItems.filter((item) => item.category === selectedCategory);
+
+  const handleImageLoad = (itemId: number) => {
+    setLoadedImages((prev) => new Set(prev).add(itemId));
+  };
+
+  const handleImageError = (itemId: number, e: React.SyntheticEvent<HTMLImageElement>) => {
+    const target = e.target as HTMLImageElement;
+    target.style.display = 'none';
+    // 에러 발생 시에도 로드된 것으로 처리 (Globe 아이콘 유지)
+  };
 
   return (
     <div className="bg-white">
@@ -133,14 +144,14 @@ export default function PortfolioPage() {
                   src={item.thumbnail}
                   alt={item.title}
                   className="absolute inset-0 w-full h-full object-cover group-hover:scale-105 transition-transform duration-300"
-                  onError={(e) => {
-                    const target = e.target as HTMLImageElement;
-                    target.style.display = 'none';
-                  }}
+                  onLoad={() => handleImageLoad(item.id)}
+                  onError={(e) => handleImageError(item.id, e)}
                 />
-                <div className="absolute inset-0 flex items-center justify-center pointer-events-none z-0">
-                  <Globe className="h-16 w-16 text-slate-400 opacity-30" />
-                </div>
+                {!loadedImages.has(item.id) && (
+                  <div className="absolute inset-0 flex items-center justify-center pointer-events-none z-0">
+                    <Globe className="h-16 w-16 text-slate-400 opacity-30" />
+                  </div>
+                )}
                 <div className="absolute inset-0 bg-black/0 group-hover:bg-black/5 transition-colors z-10" />
               </div>
               <CardHeader className="flex-1 flex flex-col pb-4">
