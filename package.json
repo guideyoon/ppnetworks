@@ -4,7 +4,8 @@
     "build": "next build",
     "start": "next start -p 8080",
     "lint": "next lint",
-    "start:server": "node start-server.js"
+    "start:server": "node start-server.js",
+    "update-thumbnail": "node scripts/update-portfolio-thumbnail.js"
   },
   "dependencies": {
     "@ai-sdk/google": "^3.0.0",
