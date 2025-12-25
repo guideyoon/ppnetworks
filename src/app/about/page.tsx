@@ -77,70 +77,140 @@ export default function AboutPage() {
       </section>
 
       {/* Values Section */}
-      <section className="w-full mb-20 bg-white py-16">
-        <div className="container mx-auto px-4">
+      <section className="w-full mb-20 bg-gradient-to-b from-white via-purple-50/20 to-white py-20 relative overflow-hidden">
+        {/* Decorative Background Elements */}
+        <div className="absolute inset-0 opacity-5">
+          <div className="absolute top-10 right-10 w-64 h-64 bg-purple-500 rounded-full blur-3xl"></div>
+          <div className="absolute bottom-10 left-10 w-80 h-80 bg-purple-600 rounded-full blur-3xl"></div>
+        </div>
+        
+        <div className="container mx-auto px-4 relative z-10">
           <ScrollAnimation direction="fade">
-            <div className="text-center space-y-4 mb-12">
-              <h2 className="text-3xl font-bold text-slate-900">우리의 가치</h2>
-              <p className="text-lg text-slate-600">
-                피플네트웍스가 지향하는 가치입니다
+            <div className="text-center space-y-4 mb-16">
+              <div className="inline-block px-4 py-2 bg-purple-100 rounded-full mb-4">
+                <span className="text-sm font-semibold text-purple-700">우리의 가치</span>
+              </div>
+              <h2 className="text-4xl font-bold tracking-tight sm:text-5xl text-slate-900">
+                피플네트웍스가 지향하는
+                <br />
+                <span className="bg-gradient-to-r from-purple-600 to-purple-500 bg-clip-text text-transparent">
+                  핵심 가치
+                </span>
+              </h2>
+              <p className="text-lg text-slate-600 max-w-2xl mx-auto">
+                고객과 함께 성장하기 위한 우리의 약속입니다
               </p>
             </div>
           </ScrollAnimation>
-          <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-6 max-w-6xl mx-auto">
+          <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-6 lg:gap-8 max-w-7xl mx-auto">
             {values.map((value, index) => (
               <ScrollAnimation key={index} direction="up" delay={index * 100}>
-                <Card className="h-full text-center bg-white border-2 border-slate-300 shadow-sm hover:shadow-md transition-shadow">
-              <CardHeader className="pb-4">
-                <div className="mx-auto mb-4 text-purple-600">{value.icon}</div>
-                <CardTitle className="text-slate-900 text-lg">{value.title}</CardTitle>
-              </CardHeader>
-              <CardContent>
-                <CardDescription className="text-base text-slate-700">
-                  {value.description}
-                </CardDescription>
-              </CardContent>
-            </Card>
-            </ScrollAnimation>
-          ))}
+                <div className="group relative flex flex-col h-full min-h-[240px] p-8 rounded-2xl bg-white border border-slate-200 shadow-md hover:shadow-2xl hover:shadow-purple-500/10 hover:-translate-y-3 transition-all duration-500 cursor-default overflow-hidden">
+                  {/* Animated Background Gradient */}
+                  <div className="absolute inset-0 bg-gradient-to-br from-purple-50/0 via-purple-50/0 to-purple-100/0 group-hover:from-purple-50/40 group-hover:via-purple-50/20 group-hover:to-white transition-all duration-500"></div>
+                  
+                  {/* Decorative Corner Accent */}
+                  <div className="absolute top-0 right-0 w-24 h-24 bg-gradient-to-br from-purple-100/0 to-purple-100/0 group-hover:from-purple-100/30 group-hover:to-transparent rounded-bl-full transition-all duration-500"></div>
+                  
+                  <div className="relative z-10 flex flex-col items-center text-center h-full">
+                    {/* Icon Container */}
+                    <div className="relative mb-6">
+                      <div className="flex h-16 w-16 items-center justify-center rounded-xl bg-gradient-to-br from-purple-500 via-purple-600 to-purple-700 text-white shadow-lg shadow-purple-500/30 group-hover:scale-110 group-hover:shadow-purple-500/50 group-hover:rotate-3 transition-all duration-500">
+                        {value.icon}
+                      </div>
+                    </div>
+                    
+                    {/* Title */}
+                    <h3 className="text-xl font-bold text-slate-900 mb-3 group-hover:text-purple-700 transition-colors duration-300">
+                      {value.title}
+                    </h3>
+                    
+                    {/* Description */}
+                    <p className="text-sm text-slate-600 leading-relaxed group-hover:text-slate-700 transition-colors duration-300 flex-grow">
+                      {value.description}
+                    </p>
+                    
+                    {/* Bottom Accent Line */}
+                    <div className="absolute bottom-0 left-0 right-0 h-1 bg-gradient-to-r from-transparent via-purple-500 to-transparent transform scale-x-0 group-hover:scale-x-100 transition-transform duration-500 origin-center rounded-full"></div>
+                  </div>
+                </div>
+              </ScrollAnimation>
+            ))}
           </div>
         </div>
       </section>
 
       {/* Approach Section */}
-      <section className="w-full mb-20 bg-slate-50 py-16">
-        <div className="container mx-auto px-4">
-          <div className="max-w-4xl mx-auto">
-        <ScrollAnimation direction="up">
-          <Card className="bg-white border-slate-200 shadow-sm">
-            <CardHeader>
-              <CardTitle className="text-2xl text-center text-slate-900">작업 방식</CardTitle>
-            </CardHeader>
-            <CardContent className="space-y-6">
-              <div>
-                <h3 className="text-lg font-semibold mb-3 text-slate-900">1. 상담 단계</h3>
-                <p className="text-slate-600">
-                  고객의 비즈니스, 목표, 예산을 파악하여 최적의 솔루션을 제안합니다.
-                  무료 상담을 통해 부담 없이 시작할 수 있습니다.
+      <section className="w-full mb-20 bg-white py-20 relative overflow-hidden">
+        {/* Decorative Background Elements */}
+        <div className="absolute inset-0 opacity-5">
+          <div className="absolute top-20 right-20 w-72 h-72 bg-purple-500 rounded-full blur-3xl"></div>
+          <div className="absolute bottom-20 left-20 w-96 h-96 bg-purple-600 rounded-full blur-3xl"></div>
+        </div>
+        
+        <div className="container mx-auto px-4 relative z-10">
+          <div className="max-w-5xl mx-auto">
+            <ScrollAnimation direction="fade">
+              <div className="text-center mb-16">
+                <div className="inline-block px-4 py-2 bg-purple-100 rounded-full mb-4">
+                  <span className="text-sm font-semibold text-purple-700">작업 방식</span>
+                </div>
+                <h2 className="text-4xl font-bold tracking-tight sm:text-5xl text-slate-900 mb-4">
+                  체계적인
+                  <br />
+                  <span className="bg-gradient-to-r from-purple-600 to-purple-500 bg-clip-text text-transparent">
+                    작업 프로세스
+                  </span>
+                </h2>
+                <p className="text-lg text-slate-600 max-w-2xl mx-auto">
+                  고객과 함께하는 단계별 명확한 진행 과정
                 </p>
               </div>
-              <div>
-                <h3 className="text-lg font-semibold mb-3 text-slate-900">2. 개발 단계</h3>
-                <p className="text-slate-600">
-                  확정된 디자인을 바탕으로 안정적이고 빠른 웹사이트를 개발합니다.
-                  중간 점검을 통해 진행 상황을 공유합니다.
-                </p>
-              </div>
-              <div>
-                <h3 className="text-lg font-semibold mb-3 text-slate-900">3. 오픈 및 지원</h3>
-                <p className="text-slate-600">
-                  최종 검수를 거쳐 사이트를 오픈합니다. 오픈 후에도 기본 유지보수와
-                  기술 지원을 제공합니다.
-                </p>
-              </div>
-          </CardContent>
-        </Card>
-        </ScrollAnimation>
+            </ScrollAnimation>
+            
+            <div className="space-y-6">
+              {[
+                {
+                  number: 1,
+                  title: "상담 단계",
+                  description: "고객의 비즈니스, 목표, 예산을 파악하여 최적의 솔루션을 제안합니다. 무료 상담을 통해 부담 없이 시작할 수 있습니다.",
+                },
+                {
+                  number: 2,
+                  title: "개발 단계",
+                  description: "확정된 디자인을 바탕으로 안정적이고 빠른 웹사이트를 개발합니다. 중간 점검을 통해 진행 상황을 공유합니다.",
+                },
+                {
+                  number: 3,
+                  title: "오픈 및 지원",
+                  description: "최종 검수를 거쳐 사이트를 오픈합니다. 오픈 후에도 기본 유지보수와 기술 지원을 제공합니다.",
+                },
+              ].map((step, index) => (
+                <ScrollAnimation key={step.number} direction="up" delay={index * 100}>
+                  <div className="group relative flex items-start gap-6 p-8 rounded-2xl bg-white border border-slate-200 shadow-md hover:shadow-xl hover:shadow-purple-500/10 hover:-translate-y-1 transition-all duration-500">
+                    {/* Number Badge */}
+                    <div className="flex-shrink-0">
+                      <div className="flex h-16 w-16 items-center justify-center rounded-xl bg-gradient-to-br from-purple-500 via-purple-600 to-purple-700 text-white text-2xl font-bold shadow-lg shadow-purple-500/30 group-hover:scale-110 group-hover:shadow-purple-500/50 transition-all duration-500">
+                        {step.number}
+                      </div>
+                    </div>
+                    
+                    {/* Content */}
+                    <div className="flex-grow">
+                      <h3 className="text-xl font-bold text-slate-900 mb-3 group-hover:text-purple-700 transition-colors duration-300">
+                        {step.number}. {step.title}
+                      </h3>
+                      <p className="text-slate-600 leading-relaxed group-hover:text-slate-700 transition-colors duration-300">
+                        {step.description}
+                      </p>
+                    </div>
+                    
+                    {/* Left Border Accent */}
+                    <div className="absolute left-0 top-0 bottom-0 w-1 bg-gradient-to-b from-purple-500 to-purple-600 transform scale-y-0 group-hover:scale-y-100 transition-transform duration-500 origin-top rounded-l-2xl"></div>
+                  </div>
+                </ScrollAnimation>
+              ))}
+            </div>
           </div>
         </div>
       </section>
