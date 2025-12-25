@@ -241,12 +241,12 @@ export default function Home() {
                               
                               {/* Main Number Circle */}
                               <div className="relative flex h-24 w-24 items-center justify-center rounded-full bg-gradient-to-br from-purple-500 via-purple-600 to-purple-700 text-white shadow-2xl shadow-purple-500/40 group-hover:scale-110 group-hover:shadow-purple-500/60 group-hover:rotate-6 transition-all duration-700">
-                                <span className="text-3xl font-bold">{step.number}</span>
+                                <span className="text-3xl font-bold group-hover:opacity-0 transition-none">{step.number}</span>
                               </div>
                               
                               {/* Icon Overlay */}
                               <div className="absolute inset-0 flex items-center justify-center opacity-0 group-hover:opacity-100 transition-none">
-                                <div className="flex h-16 w-16 items-center justify-center rounded-full bg-white/20 backdrop-blur-sm">
+                                <div className="flex h-16 w-16 items-center justify-center rounded-full bg-white/30 backdrop-blur-md">
                                   <IconComponent className="h-8 w-8 text-white" strokeWidth={2.5} />
                                 </div>
                               </div>
