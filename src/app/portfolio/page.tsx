@@ -141,11 +141,15 @@ export default function PortfolioPage() {
               <Card className="h-full flex flex-col overflow-hidden hover:shadow-lg transition-shadow group bg-white border-2 border-slate-300 shadow-sm">
               <div className="aspect-video bg-slate-100 flex items-center justify-center relative overflow-hidden">
                 <img
+                  key={item.id}
                   src={item.thumbnail}
                   alt={item.title}
                   className="absolute inset-0 w-full h-full object-cover group-hover:scale-105 transition-transform duration-300"
                   onLoad={() => handleImageLoad(item.id)}
-                  onError={(e) => handleImageError(item.id, e)}
+                  onError={(e) => {
+                    console.error(`Image load error for ${item.title}:`, item.thumbnail);
+                    handleImageError(item.id, e);
+                  }}
                 />
                 {!loadedImages.has(item.id) && (
                   <div className="absolute inset-0 flex items-center justify-center pointer-events-none z-0">
