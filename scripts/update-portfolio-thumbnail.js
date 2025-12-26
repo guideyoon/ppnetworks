@@ -77,3 +77,5 @@ if (isNaN(portfolioId)) {
 
 updatePortfolioThumbnail(portfolioId, fileName);
 
+
+
