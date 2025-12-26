@@ -48,24 +48,27 @@ export default function Home() {
   const portfolioItems = [
     {
       id: 1,
-      title: "카페 홈페이지",
+      title: "카페 모던",
       category: "카페/베이커리",
-      description: "따뜻한 분위기의 카페 홈페이지",
-      thumbnail: "/placeholder-cafe.jpg",
+      description: "따뜻하고 모던한 분위기의 카페 홈페이지",
+      thumbnail: "/cafemorden.png",
+      site_url: "https://cafemorden.vercel.app/",
     },
     {
       id: 2,
-      title: "미용실 홈페이지",
+      title: "미용실 아름",
       category: "미용/뷰티",
-      description: "모던한 디자인의 미용실 홈페이지",
-      thumbnail: "/placeholder-salon.jpg",
+      description: "세련되고 전문적인 미용실 홈페이지",
+      thumbnail: "/sum.png",
+      site_url: "https://arm-salon.vercel.app/",
     },
     {
       id: 3,
-      title: "레스토랑 홈페이지",
+      title: "따뜻한 국밥",
       category: "음식점",
-      description: "세련된 레스토랑 홈페이지",
-      thumbnail: "/placeholder-restaurant.jpg",
+      description: "마음을 데우는 진한 국밥 한 그릇",
+      thumbnail: "/gukbap-thumbnail.jpg.png",
+      site_url: "https://guideyoon.github.io/my-homapage/",
     },
   ];
 
@@ -207,7 +210,7 @@ export default function Home() {
                   <span className="text-sm font-semibold text-purple-700">제작 프로세스</span>
                 </div>
                 <h2 className="text-4xl font-bold tracking-tight sm:text-5xl text-slate-900">
-                  명확하고 체계적인
+                <span className="block mb-2">명확하고 체계적인</span>
                   <br />
                   <span className="bg-gradient-to-r from-purple-600 to-purple-500 bg-clip-text text-transparent">
                     제작 과정
@@ -299,8 +302,13 @@ export default function Home() {
             {portfolioItems.map((item, index) => (
               <ScrollAnimation key={item.id} direction="up" delay={index * 100}>
                 <Card className="overflow-hidden hover:shadow-lg transition-all bg-white border-slate-200 shadow-sm hover:shadow-xl hover:-translate-y-1">
-                  <div className="aspect-video bg-slate-100 flex items-center justify-center">
-                    <Globe className="h-12 w-12 text-slate-400" />
+                  <div className="aspect-video bg-slate-100 flex items-center justify-center relative overflow-hidden">
+                    <img
+                      src={item.thumbnail}
+                      alt={item.title}
+                      className="absolute inset-0 w-full h-full object-cover"
+                    />
+                    <div className="absolute inset-0 bg-black/0 group-hover:bg-black/5 transition-colors" />
                   </div>
                   <CardHeader>
                     <div className="text-sm text-purple-600 mb-2 font-semibold">
