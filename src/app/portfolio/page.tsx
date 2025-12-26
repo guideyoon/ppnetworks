@@ -23,8 +23,8 @@ const portfolioItems = [
     title: "미용실 아름",
     category: "미용/뷰티",
     description: "세련되고 전문적인 미용실 홈페이지",
-    thumbnail: "/placeholder-salon.jpg",
-    site_url: "https://example.com",
+    thumbnail: "/sum.png",
+    site_url: "https://arm-salon.vercel.app/",
     tags: ["반응형"],
   },
   {
