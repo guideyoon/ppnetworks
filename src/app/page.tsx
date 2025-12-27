@@ -114,7 +114,6 @@ export default function Home() {
               style={{
                 backgroundImage: `url(${image})`,
                 transitionDelay: index === currentImageIndex ? '0ms' : '0ms',
-                imageRendering: 'high-quality',
               }}
             />
           ))}
