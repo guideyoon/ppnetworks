@@ -93,8 +93,9 @@ export default function AboutPage() {
                       </p>
                       <div className="pt-4">
                         <p className="text-xl md:text-2xl lg:text-3xl font-semibold text-slate-900 text-center">
-                          피플네트웍스와 함께 여러분의 비즈니스를 온라인에서도 빛나게
-                          만들어보세요.
+                          피플네트웍스와 함께 여러분의 비즈니스를
+                          <br />
+                          온라인에서도 빛나게 만들어보세요.
                         </p>
                       </div>
                     </div>
