@@ -114,11 +114,12 @@ export default function Home() {
               style={{
                 backgroundImage: `url(${image})`,
                 transitionDelay: index === currentImageIndex ? '0ms' : '0ms',
+                imageRendering: 'high-quality',
               }}
             />
           ))}
-          {/* Overlay */}
-          <div className="absolute inset-0 bg-white/70"></div>
+          {/* Overlay - Reduced opacity for sharper image */}
+          <div className="absolute inset-0 bg-white/40"></div>
         </div>
         
         {/* Content */}

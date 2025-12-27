@@ -41,8 +41,8 @@ const portfolioItems = [
     title: "요가 스튜디오",
     category: "헬스/운동",
     description: "자연스럽고 편안한 요가 스튜디오 홈페이지",
-    thumbnail: "/placeholder-yoga.jpg",
-    site_url: "https://example.com",
+    thumbnail: "/yogasum.png",
+    site_url: "https://yoga-studio-ten.vercel.app/",
     tags: ["반응형"],
   },
   {
