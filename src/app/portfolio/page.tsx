@@ -50,8 +50,8 @@ const portfolioItems = [
     title: "의류 매장",
     category: "패션/의류",
     description: "트렌디한 의류 매장 홈페이지",
-    thumbnail: "/placeholder-fashion.jpg",
-    site_url: "https://example.com",
+    thumbnail: "/fssum.png",
+    site_url: "https://fashion-roan.vercel.app/",
     tags: ["반응형"],
   },
   {
@@ -59,8 +59,8 @@ const portfolioItems = [
     title: "애견 미용실",
     category: "반려동물",
     description: "사랑스러운 애견 미용실 홈페이지",
-    thumbnail: "/placeholder-pet.jpg",
-    site_url: "https://example.com",
+    thumbnail: "/petsum.png",
+    site_url: "https://pet-puce-three.vercel.app/",
     tags: ["반응형"],
   },
 ];
